@@ -4,6 +4,7 @@ import './App.css';
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
+
 const testarray = [{
 id:0,
 set:true,
@@ -19,8 +20,9 @@ innnn:"aaa"
   innnn:"ccc"
   
 }]
-console.log(testarray.find(item=>item.id==1))
+// console.log(testarray.find(item=>item.id==1))
 function App() {
+
   return (
     <div className="App">
       <Provider store={store}>
@@ -29,10 +31,11 @@ function App() {
                 <Route path="/" element={<Homeview/>} />
                 <Route path="/admin" element={<>admin</>} />
                 <Route path="/admin/edit/:articleId" element={<>edit</>} />
+                <Route path="/worldView" element={<>worldView</>} />
                 <Route path="/personality/:type" element={<>personality</>} />
                 <Route path="/articleList" element={<>articleList</>} />
                 <Route path="/article/:articleId" element={<>article</>} />
-
+                <Route path="/team" element={<>team</>} />
             </Routes>
         </BrowserRouter>
       </Provider>

@@ -11,7 +11,14 @@ const initialState = {
                 normalContent:" ",
                 listContent:[]
             },
-           
+            {
+                id:"1",
+                title:"Empty",
+                author:"alba2",
+                publishOrNot:false,
+                normalContent:"aaaa ",
+                listContent:[]
+            },
            
         ]
     
@@ -23,20 +30,21 @@ name:'admin',
 initialState,
 reducers:{
     articleEditing:(state,action)=>{
-        let list = state.articleList.filter(item=>item.id != action.payload.id)
-       let article = state.articleList.find(art=>art.id==action.payload.id)
+        const list = state.articleList.filter(item=>item.id != action.payload.id)
+      const article = state.articleList.find(art=>art.id==action.payload.id)
        article.normalContent=action.payload.normalContent
        state.articleList=[
-        article,...list
+        article,
+    ...list
        ]
     }
 }
 });
-//export state to global
-export const adminSet = (state) => state.admin.articleList;
+//export state to global，可用useSelector呼叫store
+export const Selectadmin = (state) => state.admin.articleList;
 
-//export actions to global
+//export actions to global，可用useDispatch呼叫action
 export const {articleEditing}=adminSlice.actions;
-//export reducer to global
 
+//export reducer to global
 export default adminSlice.reducer
