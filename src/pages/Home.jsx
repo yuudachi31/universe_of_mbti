@@ -3,8 +3,10 @@ import { useEffect } from "react";
 import { Selectadmin, articleEditing } from "../redux/adminSlice";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import homeData from "../json/home.json"
+import HomeSection from "../components/HomeSection";
 // import {} from "../redux/adminSlice"
-const Homeview = () => {
+const HomeView = () => {
   useEffect(() => {
     EditArticle();
   }, []);
@@ -19,12 +21,13 @@ const Homeview = () => {
       })
     );
   };
-
-  console.log(admin);
+//   console.log(homeData)
+//   console.log(admin);
   return (
     <>
       <Navbar></Navbar>
       <div className="home-container">
+        <div className="home-top">
         <img className="homebg1" src="./images/Group.png"></img>
         <div className="homeValue">
           <img className="homeTitle" src="./images/Frame.png"></img>
@@ -36,10 +39,21 @@ const Homeview = () => {
           </Link>
         </div>
         <img className="down-btn" src="./images/downBtn.png"></img>
+        </div>
+     
+<div className="home-content">
 
+
+{
+  
+    homeData.map(item =>{
+       return <HomeSection item={item}></HomeSection>
+    })
+} 
+</div>
       </div>
     </>
   );
 };
 
-export default Homeview;
+export default HomeView;

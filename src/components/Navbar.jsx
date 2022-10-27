@@ -6,8 +6,8 @@ const Navbar = () => {
   return (
   <>
   <div className="navbar">
-    <Link to="./">
-    <img src="./images/logo.png" className="navbar-logo"/>
+    <Link to="/">
+    <img src="/images/nav_logo.png" className="navbar-logo"/>
     </Link>
 <div className="navLinks">
 <Link className="navBtn" to="/worldView">

@@ -5,35 +5,55 @@
         "feature":"NT型 科學家, 思想家的搖籃",
         "pictures":[
             {
-                "imageUrl":"./images/intjImage.png",
-                "labelImage":"intjLabel.png"
+                "imageUrl":"./images/INTJ.png",
+                "labelImage":"intjLabel.png",
+                "typeLetter": "INTJ"
             },
             {
-                "imageUrl":"./images/intpImage.png",
-                "labelImage":"intpLabel.png"
+                "imageUrl":"./images/INTP.png",
+                "labelImage":"intpLabel.png",
+                "typeLetter": "INTP"
             },
             {
-                "imageUrl":"./images/entjImage.png",
-                "labelImage":"entjLabel.png"
+                "imageUrl":"./images/ENTJ.png",
+                "labelImage":"entjLabel.png",
+                "typeLetter": "ENTJ"
             },
             {
-                "imageUrl":"./images/entpImage.png",
-                "labelImage":"entpLabel.png"
+                "imageUrl":"./images/ENTP.png",
+                "labelImage":"entpLabel.png",
+                "typeLetter": "ENTP"
             }
         ]
 
     },
     {
-        "mainType":"理想主義者",
-        "mainTypeEnglish":"IDEALISTS",
-        "feature":"",
+        "mainType":"理性者",
+        "mainTypeEnglish":"RATIONALISTS",
+        "feature":"NT型 科學家, 思想家的搖籃",
         "pictures":[
             {
-                "imageUrl":"",
-                "labelImage":""
+                "imageUrl":"./images/INTJ.png",
+                "labelImage":"intjLabel.png",
+                "typeLetter": "INTJ"
+            },
+            {
+                "imageUrl":"./images/INTP.png",
+                "labelImage":"intpLabel.png",
+                "typeLetter": "INTJ"
+            },
+            {
+                "imageUrl":"./images/ENTJ.png",
+                "labelImage":"entjLabel.png",
+                "typeLetter": "INTJ"
+            },
+            {
+                "imageUrl":"./images/ENTP.png",
+                "labelImage":"entpLabel.png",
+                "typeLetter": "INTJ"
             }
-           
         ]
 
     }
+    
 ]

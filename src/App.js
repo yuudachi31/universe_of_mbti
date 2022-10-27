@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homeview from "./pages/Home";
+import PersonalityView  from "./pages/Personality";
 import './App.css';
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -32,7 +33,7 @@ function App() {
                 <Route path="/admin" element={<>admin</>} />
                 <Route path="/admin/edit/:articleId" element={<>edit</>} />
                 <Route path="/worldView" element={<>worldView</>} />
-                <Route path="/personality/:type" element={<>personality</>} />
+                <Route path="/personality/:type" element={<PersonalityView/>} />
                 <Route path="/articleList" element={<>articleList</>} />
                 <Route path="/article/:articleId" element={<>article</>} />
                 <Route path="/team" element={<>team</>} />

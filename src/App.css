@@ -1,6 +1,14 @@
 .App {
   /* text-align: center; */
 }
+@font-face {
+  font-family: 'Hiragino Kaku Gothic Std';
+  src: url(./fonts/Hiragino.woff) format('woff');
+}
+@font-face {
+  font-family: 'Hiragino Kaku Gothic ';
+  src: url(./fonts/Hiragino\ Sans\ CNS\ W3.woff) format('woff');
+}
 *{
   font-family: 'Hiragino Kaku Gothic ProN';
 font-style: normal;
@@ -14,6 +22,7 @@ font-style: normal;
  align-items: center;
  position: fixed;
  z-index: 2;
+
 }
 
 .navbar-logo{
@@ -45,16 +54,24 @@ text-align: center;
 letter-spacing: 0.05em;
 }
 .home-container{
-  width: 100%;
+  /* width: 100%; */
   /* background-color: brown; */
   min-height: 100vh;
+  /* position: relative; */
+  overflow-x: hidden;
+
+}
+.home-top{
   position: relative;
+  height: 100vh;
+  height: 1100px;
 }
 .homebg1{
   width: 930px;
   position: absolute;
   right: -120px;
   top:-180px;
+  /* max-height: 120vh; */
 }
 /*left顧及一點RWD*/
 .homeValue{
@@ -92,4 +109,214 @@ color: #2B2B2B;
   position: absolute;
   top: 90vh;
   left: 30px;
+}
+.home-content{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+
+}
+.section-container{
+  width: 90%;
+  /* background-color: aqua; */
+  margin-bottom: 150px;
+}
+.section-title{
+  display: flex;
+align-items: flex-end;
+}
+.section-maintype{
+  font-family: 'Hiragino Kaku Gothic Std';
+font-style: normal;
+font-weight: 800;
+font-size: 60px;
+/* line-height: 90px; */
+/* identical to box height */
+
+letter-spacing: 0.05em;
+
+color: #000000;
+
+}
+.section-english{
+font-family: 'Hiragino Kaku Gothic Std';
+font-style: normal;
+font-weight: 800;
+font-size: 30px;
+line-height: 58px;
+letter-spacing: 0.05em;
+margin-left: 18px;
+}
+.section-feature{
+margin-top: 10px;
+font-family: 'Hiragino Kaku Gothic Std';
+font-style: normal;
+font-weight: 800;
+font-size: 36px;
+line-height: 54px;
+/* identical to box height */
+
+letter-spacing: 0.05em;
+
+color: #2A2A2A;
+}
+.section-each-img{
+  /* width: 100px; */
+}
+.section-feature-list{
+  display: flex;
+  margin-top: 50px;
+  /* flex:1 1 1 1; */
+  /* background-color: #2B2B2B; */
+  justify-content: space-between;
+}
+.section-each-type{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-each-label{
+  margin-top: 50px;
+}
+.big-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.personality-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 1220px;
+  width: 1220px;
+  /* height: 50px; */
+  /* background-color: aqua; */
+
+}
+.personality-top{
+  /* min-height: 100vh; */
+  width: 100%;
+  display: flex;
+  height: 813px
+ 
+}
+.personality-top-left{
+flex:1;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+
+}
+.personality-top-right{
+width: 546px;
+height: 100%;
+/* background-color: azure; */
+position: relative;
+}
+
+.personality-top-image{
+  position: absolute;
+  bottom: 0px;
+}
+
+.personality-top-character{
+/* bottom: 0px; */
+transform: translateX(-50%);
+left: 50%;
+
+}
+.personality-top-title{
+  display: flex;
+align-items: flex-end;
+}
+.personality-top-type{
+  font-family: 'Hiragino Kaku Gothic Std';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 60px;
+  /* line-height: 90px; */
+  /* identical to box height */
+  
+  letter-spacing: 0.05em;
+  
+  color: #000000;
+}
+.personality-top-type-chin{
+  font-family: 'Hiragino Kaku Gothic Std';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 63px;
+  margin-left: 30px;
+  /* identical to box height */
+  
+  letter-spacing: 0.05em;
+  
+  color: #000000;
+}
+/* 
+.personality-top-subtitle{
+  font-family: 'Hiragino Kaku Gothic Std';
+font-style: normal;
+font-weight: 800;
+font-size: 36px;
+line-height: 54px;
+
+
+letter-spacing: 0.05em;
+
+color: #954FFF;
+} */
+
+.personality-top-content{
+  width: 577px;
+}
+.personality-top-content div{
+  margin-top: 20px;
+  font-family: 'Hiragino Kaku Gothic ProN';
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 175%;
+/* or 44px */
+
+letter-spacing: 0.02em;
+
+color: #000000;
+
+}
+
+.letterMeans{
+  /* min-height: 100vh; */
+  margin-top: 158px;
+  width: 100%;
+  /* display: flex; */
+  height: 813px
+ 
+}
+
+.personality-section-title{
+  font-family: 'Hiragino Kaku Gothic Std';
+font-style: normal;
+font-weight: 800;
+font-size: 36px;
+line-height: 54px;
+/* identical to box height */
+
+letter-spacing: 0.05em;
+
+color: #000000;
+}
+.letterMeans-content{
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.meansCard-cont{
+  width: 200px;
 }
