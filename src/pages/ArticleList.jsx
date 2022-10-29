@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect , useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -9,12 +9,32 @@ import styled from "styled-components";
 import articleListJson from "../json/articleList.json";
 // import {} from "../redux/adminSlice"
 const tagsList = [
-  ["INTG", "INTP", "ENTJ", "ENTP"],
+  ["INTJ", "INTP", "ENTJ", "ENTP"],
   ["INFJ", "INFP", "ENFJ", "ENFP"],
   ["ISTJ", "ISFJ", "ESTJ", "ESFJ"],
   ["ISTP", "ISFP", "ESTP", "ESFP"],
 ];
 const ArticleList = () => {
+  const [selectedTags,setSelectedTags] = useState([])
+
+  const tagOnClick = (e)=>{
+let type=e.target.innerHTML
+if(selectedTags.find((item)=>item===type)){
+
+  selectedTags.forEach((item, index)=>{
+    let arr = selectedTags
+    if(item===type){
+      arr.splice(index,1)
+      setSelectedTags(arr)
+    }
+  })
+}else{
+
+  setSelectedTags([...selectedTags,type])
+}
+console.log(selectedTags)
+  }
+
   useEffect(() => {
     // window.scrollTo({top: 0})
   }, []);
@@ -51,7 +71,7 @@ const ArticleList = () => {
                 {tagsList.map((qtaglist, index) => (
                   <div className="taglist-row">
                     {qtaglist.map((tag) => (
-                      <div className="article-each-tag" onClick={()=>{console.log("asdsad")}}>{tag}</div>
+                      <ArticleEachTag className="article-each-tag"tagOnClick={tagOnClick}selectedTag={selectedTags} tag={tag}></ArticleEachTag>
                     ))}
                   </div>
                 ))}
@@ -65,7 +85,25 @@ const ArticleList = () => {
   );
 };
 
+const ArticleEachTag = ({selectedTags,tagOnClick,tag})=>{
+  const [active,setActive]=useState(false)
+  //  let toggle = selectedTags.find((item)=>item==tag)
+  console.log()
+  //  if (toggle){
+  //   setActive(true)
+  //  }else{
+  //   setActive(false)
+  //  }
+  return(
+    <div className={"article-each-tag"} selectedTag={selectedTags} onClick={(e)=>tagOnClick(e)}>{tag}</div>
+    // <div className="article-each-tag" selectedTag={selectedTags} onClick={(e)=>tagOnClick(e)}>{tag}</div>
+ 
+  )
+
+}
+
 const ArticleCard = ({ item }) => {
+ 
   return (
     <div className="articleCard-cont">
       <div className="articleCard-textblock">

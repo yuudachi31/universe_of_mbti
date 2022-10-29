@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({posr}) => {
   
 
   return (
   <>
-  <div className="navbar">
+  <div className={posr?"navbar posr":"navbar"}>
     <Link to="/">
     <img src="/images/nav_logo.png" className="navbar-logo"/>
     </Link>
