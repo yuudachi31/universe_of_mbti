@@ -51,7 +51,7 @@ const ArticleList = () => {
                 {tagsList.map((qtaglist, index) => (
                   <div className="taglist-row">
                     {qtaglist.map((tag) => (
-                      <div className="article-each-tag">{tag}</div>
+                      <div className="article-each-tag" onClick={()=>{console.log("asdsad")}}>{tag}</div>
                     ))}
                   </div>
                 ))}
