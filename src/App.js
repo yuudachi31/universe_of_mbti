@@ -4,7 +4,7 @@ import PersonalityView  from "./pages/Personality";
 import './App.css';
 import { Provider } from "react-redux";
 import store from "./redux/store";
-
+import ArticleList from "./pages/ArticleList";
 
 const testarray = [{
 id:0,
@@ -34,7 +34,7 @@ function App() {
                 <Route path="/admin/edit/:articleId" element={<>edit</>} />
                 <Route path="/worldView" element={<>worldView</>} />
                 <Route path="/personality/:type" element={<PersonalityView/>} />
-                <Route path="/articleList" element={<>articleList</>} />
+                <Route path="/articleList" element={<ArticleList/>} />
                 <Route path="/article/:articleId" element={<>article</>} />
                 <Route path="/team" element={<>team</>} />
             </Routes>
