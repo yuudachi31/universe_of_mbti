@@ -111,8 +111,11 @@ align-items: center;
   min-height: 100vh;
   /* position: relative; */
   margin-top: 42px;
-  overflow-x: hidden;
-
+  /* overflow-x: hidden; */
+display: flex;
+flex-direction: column;
+/* justify-content: center; */
+align-items: center;
 }
 .home-top{
   position: relative;
@@ -141,7 +144,9 @@ align-items: center;
   /* position: absolute;
   top:33vh;
   left: 14vw; */
+  margin-left: 45px;
   margin-top: 160px;
+
 }
 /*幫title加了白底 免得跟背景圖重疊*/
 .homeTitle{
@@ -175,7 +180,8 @@ color: #2B2B2B;
   left: 30px;
 }
 .home-content{
-  margin-top: 210px;
+  max-width: 1440px;
+  margin: 210px 80px 80px 0;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -184,7 +190,7 @@ color: #2B2B2B;
 
 }
 .section-container{
-  width: 90%;
+  width: 100%;
   /* background-color: aqua; */
   margin-bottom: 150px;
 }
@@ -492,6 +498,7 @@ min-height: 100px;
 display: flex;
 /* width: 100%; */
 margin-bottom: 50px;
+cursor: pointer;
 }
 .articleCard-textblock{
 width: 418px;

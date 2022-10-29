@@ -18,6 +18,7 @@ const ArticleList = () => {
   const [selectedTags,setSelectedTags] = useState([])
 
   const tagOnClick = (e)=>{
+    console.log("s")
 let type=e.target.innerHTML
 if(selectedTags.find((item)=>item===type)){
 
@@ -25,7 +26,7 @@ if(selectedTags.find((item)=>item===type)){
     let arr = selectedTags
     if(item===type){
       arr.splice(index,1)
-      setSelectedTags(arr)
+      setSelectedTags([...arr])
     }
   })
 }else{
@@ -71,7 +72,7 @@ console.log(selectedTags)
                 {tagsList.map((qtaglist, index) => (
                   <div className="taglist-row">
                     {qtaglist.map((tag) => (
-                      <ArticleEachTag className="article-each-tag"tagOnClick={tagOnClick}selectedTag={selectedTags} tag={tag}></ArticleEachTag>
+                      <ArticleEachTag   tagOnClick={tagOnClick}selectedTags={selectedTags} tag={tag}></ArticleEachTag>
                     ))}
                   </div>
                 ))}
@@ -87,15 +88,24 @@ console.log(selectedTags)
 
 const ArticleEachTag = ({selectedTags,tagOnClick,tag})=>{
   const [active,setActive]=useState(false)
-  //  let toggle = selectedTags.find((item)=>item==tag)
-  console.log()
+  useEffect(()=>{
+    const toggle = selectedTags.find((item)=>item===tag)
+    if (toggle){
+      setActive(true)
+    }else{
+      setActive(false)
+    }
+  },[selectedTags])
+  console.log(selectedTags)
+   
+
   //  if (toggle){
   //   setActive(true)
   //  }else{
   //   setActive(false)
   //  }
   return(
-    <div className={"article-each-tag"} selectedTag={selectedTags} onClick={(e)=>tagOnClick(e)}>{tag}</div>
+    <div className={active?"article-each-tag article-each-active":"article-each-tag"}  onClick={(e)=>{tagOnClick(e) }}>{tag}</div>
     // <div className="article-each-tag" selectedTag={selectedTags} onClick={(e)=>tagOnClick(e)}>{tag}</div>
  
   )
