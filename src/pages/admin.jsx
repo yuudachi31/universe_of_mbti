@@ -14,6 +14,7 @@ const tagsList = [
   ["ISTP", "ISFP", "ESTP", "ESFP"],
 ];
 const AdminView = () => {
+    const [showDelete,setShowDelete]=useState(false)
   const [selectedTags,setSelectedTags] = useState([])
 
   const tagOnClick = (e)=>{
@@ -36,8 +37,9 @@ console.log(selectedTags)
   }
 
   useEffect(() => {
+    console.log(showDelete)
     // window.scrollTo({top: 0})
-  }, []);
+  }, [showDelete]);
   //   const { type } = useParams();
   //   const typeObj = personalityJson.find((x) => x.typeLetter === type);
   //   console.log(typeObj);
@@ -45,32 +47,36 @@ console.log(selectedTags)
     <>
       <Navbar posr={true}admin={true}></Navbar>
       <div className="big-container">
+   
         <div className="manage-container">
         <div className="add-article">
             <img src="./images/add_article.png"></img>
+            <Link className="link" to="/admin/edit/id">
             <div className="add-article-text">
                   新增文章
             </div>
+            </Link>
         </div>
         <hr className="manage-bottomline" Size="2px"  width="100%"></hr>
         {
             articleListJson.map((item)=>(
-                <ManageArticleCard item={item}/>
+                <ManageArticleCard item={item} setShowDelete={setShowDelete}/>
             ))
         }
         </div>
     
       </div>
+      {showDelete?(<DeleteModal setShowDelete={setShowDelete}/>):("")}
     </>
   );
 };
 
 
 
-const ManageArticleCard = ({ item }) => {
+const ManageArticleCard = ({ item,setShowDelete }) => {
  
   return (
-    <Link className="link" to="/admin/edit/id">
+  
      <div className="articleCard-cont">
       <div className="manage-articleCard-textblock">
         <div className="manage-articleCard-title">{item.articleTitle}</div>
@@ -78,8 +84,10 @@ const ManageArticleCard = ({ item }) => {
         
       </div>
      <div className="manage-articleCard-buttons-cont">
+     <Link className="link" to="/admin/edit/id">
 <div className="manage-articleCard-button">修改</div>
-<div className="manage-articleCard-button">刪除</div>
+</Link>
+<div className="manage-articleCard-button" onClick={()=>{setShowDelete(true)}}>刪除</div>
 {
     item.publish?(<div className="manage-articleCard-button manage-articleCard-published">已發布</div>):(<div className="manage-articleCard-button">發布</div>)
 }
@@ -89,8 +97,30 @@ const ManageArticleCard = ({ item }) => {
 
      </div>
     </div>
-    </Link>
+
    
   );
 };
+
+const DeleteModal =({setShowDelete})=>{
+return(
+    <>
+    <div className="delete-modal-cont">
+        <div className="delete-modal">
+            <div className="delete-modal-text mb50">
+            確定刪除?
+            </div>
+            <div className="dsp-f">
+<div className="delete-modal-buttons mr50 " onClick={()=>{setShowDelete(false)}} >
+    取消
+</div>
+<div className="delete-modal-buttons active" onClick={()=>{setShowDelete(false)}}>
+    確定
+</div>
+            </div>
+        </div>
+    </div>
+    </>
+)
+}
 export default AdminView;

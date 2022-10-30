@@ -83,6 +83,9 @@ font-style: normal;
 .mb25{
   margin-bottom: 25px;
 }
+.mr50{
+margin-right: 50px;
+}
 .nav-management{
   font-family: 'ヒラギノ角ゴ ProN W6';
 font-style: normal;
@@ -547,7 +550,7 @@ min-height: 100px;
 display: flex;
 /* width: 100%; */
 margin-bottom: 50px;
-cursor: pointer;
+/* cursor: pointer; */
 }
 .articleCard-textblock{
 width: 418px;
@@ -897,6 +900,7 @@ align-items: center;
 justify-content: space-between;
 flex: 1;
 margin-left: 75px;
+cursor: pointer;
 }
 .manage-articleCard-button{
   font-family: 'ヒラギノ角ゴ ProN W6';
@@ -1021,4 +1025,71 @@ flex-wrap: wrap;
   align-self:flex-end;
   margin-top: 50px;
   margin-bottom: 125px;
+  }
+  .delete-modal-cont{
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #6666665f;
+    z-index: 2;
+  }
+  .delete-modal{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    border: 6px solid #000000;
+    width: 568px;
+    height: 354px;
+    border-radius: 10px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .delete-modal-text{
+    font-family: 'ヒラギノ角ゴ ProN W8';
+font-style: normal;
+font-weight: 800;
+font-size: 45px;
+line-height: 158%;
+/* or 71px */
+
+display: flex;
+align-items: center;
+/* text-align: center; */
+letter-spacing: 0.2em;
+
+color: #000000;
+  }
+  .delete-modal-buttons{
+    width: 108px;
+height: 57px;
+border: 3px solid #000000;
+font-family: 'ヒラギノ角ゴ ProN W6';
+
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 38px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.285em;
+color: #000000;
+display: flex;
+align-items: center;
+justify-content: center;
+/* margin-right: 50px; */
+padding-left: 10px;
+  }
+  .delete-modal .active{
+color:#fff;
+background-color: #000000;
+
   }
