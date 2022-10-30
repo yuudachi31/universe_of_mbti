@@ -47,9 +47,13 @@ const ArticleView = () => {
 
    
   ))
+  
 }
 
-
+<hr className="article-detail-bottomline" Size="2px"  width="100%"></hr>
+<div className="article-detail-link-cont">
+  
+</div>
 </div>
         <Footer/>
       </div>

@@ -1,28 +1,28 @@
 [
   {
-    "mainColor": "#954FFF",
     "typeLetter": "INTJ",
+    "mainColor": "#954FFF",
     "typeChinese": "建築師型人格",
     "subTitle": "重邏輯與秩序，獨立且強勢的專家",
     "content": "<div>性格謹慎、喜歡邏輯推理及分析複雜的問題，比其它類型更不喜歡社交，難以容忍強烈且戲劇性的情感問題。</div><div>總會以新的角度或新的方法來看待事情。熱衷於獲得新的認知，具有洞察力且思考敏捷。</div><div>無論其他人如何看待他們，他們堅信自己的想法，被人為是16個人格裡最獨立的人格。</div>",
     "LetterMeans": [
       {
-        "ImageUrl": "/images/Introversion.png",
-        "chinese": "内向型",
+        "ImageUrl": "/images/Introversion",
+        "chinese": "內向型",
         "english": "Introversion"
       },
       {
-        "ImageUrl": "/images/Intuition.png",
+        "ImageUrl": "/images/Intuition",
         "chinese": "直覺型",
         "english": "Intuition"
       },
       {
-        "ImageUrl": "/images/Thinking.png",
+        "ImageUrl": "/images/Thinking",
         "chinese": "思考型",
         "english": "Thinking"
       },
       {
-        "ImageUrl": "/images/Judging.png",
+        "ImageUrl": "/images/Judging",
         "chinese": "判斷型",
         "english": "Judging"
       }
@@ -30,19 +30,163 @@
     "cognition": [
       {
         "title": "主導功能：內傾直覺（Ni）",
-        "content": "Ni仰賴來自視覺的回饋，通過圖像來思考，再以具有象徵性的圖像、符號、夢境等表達直覺。具有抽象與前瞻性的功能，將看起來複雜的事物拼湊成先前無法想像的成果。"
+        "content": "Ni容易進入無意識狀態的功能。不受意識控制，通常可以產生準確的預感。擅長分析過去找線索，擁有看事物全局的能力，甚至預言未來。大部分時間都活在精神世界，以致於無法在現實中集中精神。"
       },
       {
         "title": "輔助功能：外傾思考（Te）",
-        "content": "Te組織、安排環境和想法，好成功達成目標。Te尋求行動、事件和結論的合理解釋，並試圖找到邏輯的錯誤和序列中的間隔。"
+        "content": "Te注重事實和邏輯，而不是情感價值等。做決策時可以將情感拋開，專注於事實。Te使用者偏向客觀邏輯思考，基於這種狀況，他們看起來冷漠且不友好，甚至霸道，但實際上並不是這樣。"
       },
       {
-        "title": "第三功能：内傾情感（Fi）",
-        "content": "Fi過濾信息，這種過濾的基礎是緣於標準（經常是無形的）形成的判斷。Fi時常協調價值觀。在各種情形下，它天生地和微妙的差別相合，並知道什麼是對什麼是錯。"
+        "title": "第三功能：內傾情感（Fi）",
+        "content": "Fi是一種判斷功能，會根據個人的價值系統作出決策。敏感且容易感到被侵犯，同理心很強的能力。通常只有在被冒犯和表現情緒化行為時，人們才能感受到自己的價值觀和此能力。"
       },
       {
-        "title": "第四功能：外傾感覺（Se）",
-        "content": "Se集中於當下的、物質的世界所帶來的體驗和感覺。以對當下周遭事情的敏銳察覺，它帶來關於前方的相對事實和細節，而且可能導致自發的行動。"
+        "title": "劣勢功能：外傾感覺（Se）",
+        "content": "Se活在當下，享受物質的世界所帶來的體驗和感覺。對當下周遭事情的敏銳察覺，擅長需要耗體力的事情。Se可以輕易感受到身旁微小的變化。"
+      }
+    ]
+  },
+
+  {
+    "typeLetter": "INTP",
+    "mainColor": "#954FFF",
+    "typeChinese": "邏輯學家型人格",
+    "subTitle": "好奇心與理性兼備，樂於挑戰的學者",
+    "content": "<div>安靜而有所保留、有想法且善於分析的人格，對事物的運作感到十分好奇，機智聰穎且理性，過於客觀使他們不擅長表達情感，喜歡與他人完全平等。</div><div>有一套自己原則，並且以此組織對外界事物的理解，能夠簡單清楚的闡述複雜事物。</div><div>過於專注使他們看起來冷淡，平時隨和但面對不合理的事或被否認時，反應有時會過於激烈。</div>",
+    "LetterMeans": [
+      {
+        "ImageUrl": "/images/Introversion",
+        "chinese": "內向型",
+        "english": "Introversion"
+      },
+      {
+        "ImageUrl": "/images/Intuition",
+        "chinese": "直覺型",
+        "english": "Intuition"
+      },
+      {
+        "ImageUrl": "/images/Thinking",
+        "chinese": "思考型",
+        "english": "Thinking"
+      },
+      {
+        "ImageUrl": "/images/Perceiving",
+        "chinese": "知覺型",
+        "english": "Perceiving"
+      }
+    ],
+    "cognition": [
+      {
+        "title": "主導功能：內傾思考（Ti）",
+        "content": "Ti擁有強大的分析及邏輯能力，並以最客觀的角度去評估問題。Ti使用者會建立一套的原則系統，分析歸類每個問題，每當遇到新問題時，他們會跟自做核對，適合的儲存，不適合就重新評估。"
+      },
+      {
+        "title": "輔助功能：外傾直覺（Ne）",
+        "content": "Ne會察覺到事情發展的趨勢，且擅長探索問題與人們行為背後的含義。Ne使用了本能的直覺與生活經驗，將他們合成新的事物來進行解答。Ne功能成熟的話可以輕鬆想出新點子並敘述出來。"
+      },
+      {
+        "title": "第三功能：內傾感覺（Si）",
+        "content": "Si將以往的經驗收集成信息，形成對未來的期望和目標，過程中會喚起以往的經歷，就像在體驗一遍過去。Si使用者通常記得許多過往細節，大多數相當念舊。"
+      },
+      {
+        "title": "劣勢功能：外傾情感（Fe）",
+        "content": "Fe的決策標準總是隨著社會的價值觀，人際關係對他們來說非常重要，所以他們總是和善的溝通並回應他人的要求，為了群體而犧牲自己。Fe高敏感的能力共感性非常強，非常樂於助人。"
+      }
+    ]
+  },
+
+  {
+    "typeLetter": "ENTJ",
+    "mainColor": "#954FFF",
+    "typeChinese": "指揮官型人格",
+    "subTitle": "果斷及行動力極高，隨時可以承擔領導職責",
+    "content": "<div>強大和理性的化身，總是迅速解決不合邏輯和低效率的問題，並且建立組織與架構。外向健談的他們，不僅樂於分享知識，也非常具有領袖魅力。</div><div>行動力極高，且有條理的規劃計畫，總是非常堅定的往前，也勇於挑戰不同的目標直到成功。</div><div>強大的企圖心使他們看起來極度強勢，有時導致對自己和他人的標準過高。</div>",
+    "LetterMeans": [
+      {
+        "ImageUrl": "/images/Extroversion",
+        "chinese": "外向型",
+        "english": "Extroversion"
+      },
+      {
+        "ImageUrl": "/images/Intuition",
+        "chinese": "直覺型",
+        "english": "Intuition"
+      },
+      {
+        "ImageUrl": "/images/Thinking",
+        "chinese": "思考型",
+        "english": "Thinking"
+      },
+      {
+        "ImageUrl": "/images/Judging",
+        "chinese": "判斷型",
+        "english": "Judging"
+      }
+    ],
+    "cognition": [
+      {
+        "title": "主導功能：外傾思考（Te）",
+        "content": "Te注重事實和邏輯，而不是情感價值等。做決策時可以將情感拋開，專注於事實。Te使用者偏向客觀邏輯思考，基於這種狀況，他們看起來冷漠且不友好，甚至霸道，但實際上並不是這樣。"
+      },
+      {
+        "title": "輔助功能：內傾直覺（Ni）",
+        "content": "Ni容易進入無意識狀態的功能。不受意識控制，通常可以產生準確的預感。擅長分析過去找線索，擁有看事物全局的能力，甚至預言未來。大部分時間都活在精神世界，以致於無法在現實中集中精神。"
+      },
+      {
+        "title": "第三功能：外傾感覺（Se）",
+        "content": "Se活在當下，享受物質的世界所帶來的體驗和感覺。對當下周遭事情的敏銳察覺，擅長需要耗體力的事情。Se可以輕易感受到身旁微小的變化。"
+      },
+      {
+        "title": "劣勢功能：內傾情感（Fi）",
+        "content": "Fi是一種判斷功能，會根據個人的價值系統作出決策。敏感且容易感到被侵犯，同理心很強的能力。通常只有在被冒犯和表現情緒化行為時，人們才能感受到自己的價值觀和此能力。"
+      }
+    ]
+  },
+
+  {
+    "typeLetter": "ENTP",
+    "mainColor": "#954FFF",
+    "typeChinese": "辯論家型人格",
+    "subTitle": "非常規的邏輯思考，勇於質疑與辯論的人格",
+    "content": "<div>強大和理性的化身，總是迅速解決不合邏輯和低效率的問題，並且建立組織與架構。外向健談的他們，不僅樂於分享知識，也非常具有領袖魅力。</div><div>行動力極高，且有條理的規劃計畫，總是非常堅定的往前，也勇於挑戰不同的目標直到成功。</div><div>強大的企圖心使他們看起來極度強勢，有時導致對自己和他人的標準過高。</div>",
+    "LetterMeans": [
+      {
+        "ImageUrl": "/images/Extroversion",
+        "chinese": "外向型",
+        "english": "Extroversion"
+      },
+      {
+        "ImageUrl": "/images/Intuition",
+        "chinese": "直覺型",
+        "english": "Intuition"
+      },
+      {
+        "ImageUrl": "/images/Thinking",
+        "chinese": "思考型",
+        "english": "Thinking"
+      },
+      {
+        "ImageUrl": "/images/Perceiving",
+        "chinese": "知覺型",
+        "english": "Perceiving"
+      }
+    ],
+    "cognition": [
+      {
+        "title": "主導功能：外傾直覺（Ne）",
+        "content": "Ne會察覺到事情發展的趨勢，且擅長探索問題與人們行為背後的含義。Ne使用了本能的直覺與生活經驗，將他們合成新的事物來進行解答。Ne功能成熟的話可以輕鬆想出新點子並敘述出來。"
+      },
+      {
+        "title": "輔助功能：內傾思考（Ti）",
+        "content": "Ti擁有強大的分析及邏輯能力，並以最客觀的角度去評估問題。Ti使用者會建立一套的原則系統，分析歸類每個問題，每當遇到新問題時，他們會跟自做核對，適合的儲存，不適合就重新評估。"
+      },
+      {
+        "title": "第三功能：外傾情感（Fe）",
+        "content": "Fe的決策標準總是隨著社會的價值觀，人際關係對他們來說非常重要，所以他們總是和善的溝通並回應他人的要求，為了群體而犧牲自己。Fe高敏感的能力共感性非常強，非常樂於助人。"
+      },
+      {
+        "title": "劣勢功能：內傾感覺（Si）",
+        "content": "Si將以往的經驗收集成信息，形成對未來的期望和目標，過程中會喚起以往的經歷，就像在體驗一遍過去。Si使用者通常記得許多過往細節，大多數相當念舊。"
       }
     ]
   }

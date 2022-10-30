@@ -77,7 +77,7 @@ const PersonalityView = () => {
               />
               <img
                 className="personality-top-image personality-top-character"
-                src={"/images/" + type + ".png"}
+                src={"/images/" + type + "_light.png"}
               />
             </div>
           </div>
@@ -119,7 +119,7 @@ const MeansCard = ({ item }) => {
   return (
     <div className="meansCard-cont">
       <div className="meansCard-img">
-        <img src={item.ImageUrl} />
+        <img src={item.ImageUrl+".png"} />
       </div>
       <div className="meansCard-chinese">{item.chinese}</div>
       <div className="meansCard-english">{item.english}</div>

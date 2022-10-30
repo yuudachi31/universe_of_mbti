@@ -491,6 +491,7 @@ align-items: center;
   border-bottom: #000 solid 3px;
   border-top: #000 solid 3px;
   border-radius: 5px;
+  background-color: #000;
 }
 .article-content-container{
   width: 100%;
@@ -712,4 +713,14 @@ letter-spacing: 0.02em;
 
 color: #2B2B2B;
 /* margin-bottom: 50px; */
+}
+
+.article-detail-bottomline{
+border-radius: 1px;
+border-color: #000;
+background-color: #000;
+margin-top: 100px;
+}
+.article-detail-link-cont{
+
 }
