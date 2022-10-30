@@ -55,6 +55,9 @@
 font-style: normal;
 
 } */
+.dsp-f{
+  display: flex;
+}
 .navbar{
  width: 100%;
  /* background-color: aqua;  */
@@ -64,6 +67,43 @@ font-style: normal;
  position: fixed;
  z-index: 2;
 
+}
+.mb50{
+  margin-bottom: 50px;
+}
+.mt40{
+  margin-top: 40px;
+}
+.ml25{
+  margin-left: 25px;
+}
+.mr10{
+  margin-right: 10px;
+}
+.mb25{
+  margin-bottom: 25px;
+}
+.nav-management{
+  font-family: 'ヒラギノ角ゴ ProN W6';
+font-style: normal;
+font-weight: 600;
+font-size: 26px;
+line-height: 39px;
+width: 125px;
+height: 45px;
+border: #000 2px solid;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-left: 20px;
+}
+.nav-manager-name{
+margin-right: 70px;
+font-family: 'ヒラギノ角ゴ ProN W6';
+font-style: normal;
+font-weight: 600;
+font-size: 26px;
+line-height: 39px;
 }
 .posr{
   position: relative;
@@ -162,12 +202,12 @@ background-color: #fff;
 margin-bottom: 40px;
 }
 .homeSlogan-text{
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-style: normal;
-font-weight: bold;
-font-size: 36px;
-line-height: 54px;
-letter-spacing: 0.05em;
+  font-family: 'ヒラギノ角ゴ ProN W8';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 54px;
+  letter-spacing: 0.05em;
 
 color: #2B2B2B;
 }
@@ -522,6 +562,11 @@ justify-content: space-between;
   font-size: 25px;
   /* line-height: 38px; */
 letter-spacing: 0.05em;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
 }
 .articleCard-description{
   /* margin-top: 25px; */
@@ -786,3 +831,194 @@ letter-spacing: 0.05em;
 color: #666666;
 margin-top: 25px;
 }
+.manage-container{
+  width: 1053px;
+  margin-top: 100px;
+}
+.add-article{
+  display: flex;
+  align-items: center;
+}
+.add-article-text{
+  font-family: 'ヒラギノ角ゴ ProN W6';
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 175%;
+/* identical to box height, or 44px */
+
+letter-spacing: 0.02em;
+margin-left: 15px;
+color: #000000;
+}
+.manage-bottomline{
+  border-radius: 1px;
+  border-color: #000;
+  background-color: #000;
+  margin-top: 45px;
+  margin-bottom: 50px;
+}
+.manage-articleCard-textblock{
+width: 640px;
+}
+.manage-articleCard-title{
+    font-family: 'ヒラギノ角ゴ ProN W8';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 25px;
+  /* line-height: 38px; */
+letter-spacing: 0.05em;
+display: -webkit-box;
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.manage-articleCard-description{
+  /* margin-top: 25px; */
+/* width: 418px; */
+margin-top: 24px;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+font-family: 'ヒラギノ角ゴ ProN W6';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 27px;
+letter-spacing: 0.05em;
+color: #666666;
+}
+.manage-articleCard-buttons-cont{
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex: 1;
+margin-left: 75px;
+}
+.manage-articleCard-button{
+  font-family: 'ヒラギノ角ゴ ProN W6';
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+/* line-height: 175%; */
+/* identical to box height, or 44px */
+
+letter-spacing: 0.02em;
+
+color: #000000;
+border: #000 3px solid;
+padding: 3px 14px;
+}
+.manage-articleCard-published{
+  background-color: #000;
+  color: #fff;
+}
+.edit-article-cont{
+  max-width: 1274px;
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: antiquewhite; */
+}
+.edit-article-bigtitle{
+  font-family: 'ヒラギノ角ゴ ProN W8';
+font-style: normal;
+font-weight: 800;
+font-size: 45px;
+line-height: 158%;
+/* or 71px */
+
+letter-spacing: 0.2em;
+margin-bottom: 50px;
+color: #000000;
+}
+.edit-article-input{
+flex: 1 ;
+  background: #F5F5F5;
+  height: 74px;
+  min-height: 74px;
+  font-family: 'ヒラギノ角ゴ ProN W6';
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 175%;
+/* identical to box height, or 44px */
+
+letter-spacing: 0.02em;
+border: none;
+color: #9E9E9E;
+padding-left: 30px;
+display: block;
+margin-top: 40px;
+}
+.edit-article-add-img{
+  display: flex;
+  align-items: center;
+
+/* identical to box height, or 54px */
+
+letter-spacing: 0.24em;
+margin-top: 30px;
+}
+.edit-article-add-img-text{
+  font-family: 'ヒラギノ角ゴ ProN W8';
+font-style: normal;
+font-weight: 800;
+font-size: 29px;
+line-height: 184.5%;
+margin-left: 16px;
+}
+.edit-article-bold-list{
+  display: flex;
+}
+.edit-article-textarea{
+  flex: 1 ;
+    background: #F5F5F5;
+   
+    font-family: 'ヒラギノ角ゴ ProN W6';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 175%;
+  /* identical to box height, or 44px */
+  
+  letter-spacing: 0.02em;
+  border: none;
+  color: #9E9E9E;
+  padding-left: 30px;
+  padding-top: 22px;
+  display: block;
+  margin-top: 40px;
+  height: 605px;
+  min-height: 605px;
+  max-height: 605px;
+
+  }
+  .edit-article-tags{
+flex-wrap: wrap;
+  }
+  .edit-article-save{
+    width: 80px;
+    height: 50px;
+    border: #000 3px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'ヒラギノ角ゴ ProN W8';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 33px;
+  /* identical to box height */
+  
+  text-align: center;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  color: #000000;
+  align-self:flex-end;
+  margin-top: 50px;
+  margin-bottom: 125px;
+  }

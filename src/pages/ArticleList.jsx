@@ -99,11 +99,6 @@ const ArticleEachTag = ({selectedTags,tagOnClick,tag})=>{
   console.log(selectedTags)
    
 
-  //  if (toggle){
-  //   setActive(true)
-  //  }else{
-  //   setActive(false)
-  //  }
   return(
     <div className={active?"article-each-tag article-each-active":"article-each-tag"}  onClick={(e)=>{tagOnClick(e) }}>{tag}</div>
     // <div className="article-each-tag" selectedTag={selectedTags} onClick={(e)=>tagOnClick(e)}>{tag}</div>
