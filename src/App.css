@@ -68,6 +68,14 @@ font-style: normal;
 .posr{
   position: relative;
 }
+.link{
+  text-decoration: none;
+  color: #000;
+}
+.link :active{
+
+  /* color:"" ; */
+}
 .navbar-logo{
   width: 60px;
   height: 60px;
@@ -622,4 +630,86 @@ color: #000000;
   
   color: #fff;
   background-color: #000;
+}
+.article-detail-cont{
+  max-width: 1080px;
+  width: 100%;
+margin-top: 240px;
+}
+.article-detail-bigtitle{
+  font-family: 'ヒラギノ角ゴ ProN W8';
+font-style: normal;
+font-weight: 800;
+font-size: 60px;
+line-height: 90px;
+letter-spacing: 0.05em;
+
+color: #000000;
+}
+.article-detail-author-date{
+  margin-top: 35px;
+  display: flex;
+ 
+/* identical to box height */
+
+letter-spacing: 0.05em;
+}
+.article-detail-author-date div{
+
+  font-family: 'ヒラギノ角ゴ ProN W8';
+
+font-style: normal;
+font-weight: 800;
+font-size: 18px;
+line-height: 27px;
+/* identical to box height */
+
+letter-spacing: 0.05em;
+margin-right: 30px;
+}
+.article-detail-images{
+  margin:  50px 0;
+  display: block;
+}
+.article-detail-content{
+  font-family: 'ヒラギノ角ゴ ProN W6';
+
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 175%;
+/* or 44px */
+
+letter-spacing: 0.02em;
+margin-top: 50px;
+color: #2B2B2B;
+
+}
+.article-title{
+  font-family: 'ヒラギノ角ゴ ProN W8';
+
+font-style: normal;
+font-weight: 800;
+font-size: 25px;
+line-height: 175%;
+/* or 44px */
+margin-bottom: 50px;
+letter-spacing: 0.02em;
+
+color: #2B2B2B;
+margin-top: 50px;
+}
+.article-sublist{
+  font-family: 'ヒラギノ角ゴ ProN W6';
+
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 175%;
+/* or 44px */
+
+letter-spacing: 0.02em;
+
+color: #2B2B2B;
+/* margin-bottom: 50px; */
 }

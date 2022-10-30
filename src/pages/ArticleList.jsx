@@ -115,7 +115,8 @@ const ArticleEachTag = ({selectedTags,tagOnClick,tag})=>{
 const ArticleCard = ({ item }) => {
  
   return (
-    <div className="articleCard-cont">
+    <Link className="link" to="/article/id">
+     <div className="articleCard-cont">
       <div className="articleCard-textblock">
         <div className="articleCard-title">{item.articleTitle}</div>
         <div className="articleCard-description">{item.articleDescription}</div>
@@ -126,6 +127,8 @@ const ArticleCard = ({ item }) => {
       </div>
       <div className="articleCard-img"></div>
     </div>
+    </Link>
+   
   );
 };
 export default ArticleList;

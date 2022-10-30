@@ -5,6 +5,8 @@ import './App.css';
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import ArticleList from "./pages/ArticleList";
+import Article from "./pages/article";
+
 
 const testarray = [{
 id:0,
@@ -35,7 +37,7 @@ function App() {
                 <Route path="/worldView" element={<>worldView</>} />
                 <Route path="/personality/:type" element={<PersonalityView/>} />
                 <Route path="/articleList" element={<ArticleList/>} />
-                <Route path="/article/:articleId" element={<>article</>} />
+                <Route path="/article/:articleId" element={<Article/>} />
                 <Route path="/team" element={<>team</>} />
             </Routes>
         </BrowserRouter>
