@@ -189,7 +189,7 @@ color: #2B2B2B;
 }
 .home-content{
   max-width: 1440px;
-  margin: 210px 80px 80px 0;
+  margin: 210px 80px  0 80px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -722,5 +722,67 @@ background-color: #000;
 margin-top: 100px;
 }
 .article-detail-link-cont{
+display: flex;
+justify-content: flex-end;
+}
+.copy-link-subcont{
+  display: flex;
+  align-items: center;
+  margin-top: 35px;
+  cursor: pointer;
+}
 
+.copy-link{
+  font-family: 'ヒラギノ角ゴ ProN W6';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 175%;
+/* identical to box height, or 32px */
+
+letter-spacing: 0.02em;
+margin-right: 20px;
+color: #666666;
+}
+.change-article-title{
+  font-family: 'ヒラギノ角ゴ ProN W6';
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 175%;
+/* identical to box height, or 44px */
+
+letter-spacing: 0.02em;
+
+color: #2B2B2B;
+margin-top: 35px;
+}
+.change-articleCard-cont{
+  width: 500px;
+}
+.change-article-bigcont{
+  /* display: flex; */
+  margin-bottom: 100px;
+}
+.change-article-subcont{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.change-articleCard-description{
+  /* margin-top: 25px; */
+width: 500px;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+font-family: 'ヒラギノ角ゴ ProN W6';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 27px;
+letter-spacing: 0.05em;
+color: #666666;
+margin-top: 25px;
 }
