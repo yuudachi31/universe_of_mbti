@@ -20,7 +20,8 @@ const HomeSection = ({ item }) => {
               <img src={each.imageUrl} />
             </div>
             <div className="section-each-label">
-              <img src={`./images/${each.labelImage}`} />
+              {/* <img src={`./images/${each.labelImage}`} /> */}
+              <div className="section-personal">{each.typeLetter}</div>
             </div>
           </div>
           </Link>
