@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'ヒラギノ角ゴ ProN W8';
+    src: url(./fonts/ヒラギノ角ゴシック\ W8.ttc) format('');
+  }
+  
+.Banner{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    min-height: 60vw;
+}
+.cover{
+    width: 60%;
+    background-image: url(../public/images/cover_old.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.intro{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15%;
+    padding-right: 5%;
+    justify-content:center;
+}
+.item{
+    margin-bottom: 30px;
+}
+.typo{
+    height: 4vw;
+    background-image: url(../public/images/Frame.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+   
+}
+.content{
+    font-family: 'ヒラギノ角ゴ ProN W8';
+    font-size: 2.3vw;
+}
+.button{
+    background: #FFF;
+    margin-bottom: 0px;    
+}
+.b_text{
+    padding: 10px 20px;
+    font-family: 'ヒラギノ角ゴ ProN W8';
+    width: 13vw;
+    outline: 6px solid;
+    font-size: 2.3vw;
+}
+.b_text:hover{
+    outline: 6px solid #000;
+    background: #000;
+    color: #FFF;
+    transition: 0.3s;
+}

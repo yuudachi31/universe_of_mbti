@@ -1,0 +1,17 @@
+<div className="home-top">
+<div className="home-top-newcont">
+  <div className="homeValue">
+    <img className="homeTitle" src="./images/Frame.png"></img>
+    <div className="homeSlogan homeSlogan-text">透過MBTI來認識</div>
+    <div className="homeSlogan homeSlogan-text">誕生於宇宙中</div>
+    <div className="homeSlogan homeSlogan-text">獨一無二的自己</div>
+    <Link className="go-btn homeSlogan-text" to="/worldView">
+      世界觀 GO!
+    </Link>
+  </div>
+  <img className="homebg1" src="./images/cover.png"></img>
+
+</div>
+
+{/* <img className="down-btn" src="./images/downBtn.png"></img> */}
+</div>
