@@ -61,7 +61,7 @@ font-style: normal;
 .navbar{
  width: 100%;
  /* background-color: aqua;  */
- height: 160px;
+ height: 130px;
  display: flex;
  align-items: center;
  position: fixed;
