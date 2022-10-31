@@ -48,3 +48,9 @@
     outline: 6px solid;
     font-size: 2.3vw;
 }
+.b_text:hover{
+    outline: 6px solid #000;
+    background: #000;
+    color: #FFF;
+    transition: 0.3s;
+}
