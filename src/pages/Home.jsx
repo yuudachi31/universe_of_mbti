@@ -26,7 +26,7 @@ const HomeView = () => {
   //   console.log(admin);
   return (
     <>
-      <Navbar ></Navbar>
+      <Navbar posr={true} ></Navbar>
       <div className="home-container">
         <Banner></Banner>
         <div className="home-content">
