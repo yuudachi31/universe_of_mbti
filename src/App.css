@@ -291,10 +291,12 @@ color: #2A2A2A;
   transition: 0.2s;
 }
 
+.section-container:not(:last-child) .section-line{
+  background: #000;
+}
 .section-line{
   height: 3px;
   margin: 5vw 0px ;
-  background: #000;
 }
 
 .big-container{
