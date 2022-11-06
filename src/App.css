@@ -211,7 +211,7 @@ color: #2B2B2B;
 .section-container{
   width: 100%;
   /* background-color: aqua; */
-  margin-bottom: 150px;
+  /* margin-bottom: 150px; */
 }
 .section-title{
   display: flex;
@@ -289,6 +289,12 @@ color: #2A2A2A;
 .section-each-type:hover > .section-each-img {
   scale: 110%;
   transition: 0.2s;
+}
+
+.section-line{
+  height: 3px;
+  margin: 5vw 0px ;
+  background: #000;
 }
 
 .big-container{

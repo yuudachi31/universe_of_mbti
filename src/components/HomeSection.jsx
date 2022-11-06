@@ -27,7 +27,9 @@ const HomeSection = ({ item }) => {
           </Link>
         ))}
       </div>
+      <div className="section-line"></div>
     </div>
+    
   );
 };
 

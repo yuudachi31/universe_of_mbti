@@ -54,6 +54,34 @@
             }
         ]
 
+    },
+    {
+        "mainType":"傳統主義者",
+        "mainTypeEnglish":"GUARDIANS",
+        "feature":"SJ型 堅定又忠誠的監護人",
+        "pictures":[
+            {
+                "imageUrl":"./images/ISTJ.png",
+                "labelImage":"istjabel.png",
+                "typeLetter": "ISTJ"
+            },
+            {
+                "imageUrl":"./images/ISFJ.png",
+                "labelImage":"isfjLabel.png",
+                "typeLetter": "ISFJ"
+            },
+            {
+                "imageUrl":"./images/ESTJ.png",
+                "labelImage":"estjLabel.png",
+                "typeLetter": "ESTJ"
+            },
+            {
+                "imageUrl":"./images/ESFJ.png",
+                "labelImage":"esfjLabel.png",
+                "typeLetter": "ESFJ"
+            }
+        ]
+
     }
     
 ]
