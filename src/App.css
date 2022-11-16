@@ -712,6 +712,15 @@ margin-top: 240px;
   font-size: 25px;
   line-height: 175%;
 }
+.article-detail-cont h1{
+  /* font-family: 'ヒラギノ角ゴ ProN W8'; */
+
+  font-style: normal;
+  font-weight: 800;
+  /* font-size: 25px; */
+  /* line-height: 175%; */
+  margin:35px 0;
+}
 .article-detail-cont h2{
   /* font-family: 'ヒラギノ角ゴ ProN W8'; */
 
