@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect , useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -15,26 +15,24 @@ const tagsList = [
   ["ISTP", "ISFP", "ESTP", "ESFP"],
 ];
 const ArticleList = () => {
-  const [selectedTags,setSelectedTags] = useState([])
+  const [selectedTags, setSelectedTags] = useState([]);
 
-  const tagOnClick = (e)=>{
-    console.log("s")
-let type=e.target.innerHTML
-if(selectedTags.find((item)=>item===type)){
-
-  selectedTags.forEach((item, index)=>{
-    let arr = selectedTags
-    if(item===type){
-      arr.splice(index,1)
-      setSelectedTags([...arr])
+  const tagOnClick = (e) => {
+    // console.log("s");
+    let type = e.target.innerHTML;
+    if (selectedTags.find((item) => item === type)) {
+      selectedTags.forEach((item, index) => {
+        let arr = selectedTags;
+        if (item === type) {
+          arr.splice(index, 1);
+          setSelectedTags([...arr]);
+        }
+      });
+    } else {
+      setSelectedTags([...selectedTags, type]);
     }
-  })
-}else{
-
-  setSelectedTags([...selectedTags,type])
-}
-console.log(selectedTags)
-  }
+    console.log(selectedTags);
+  };
 
   useEffect(() => {
     // window.scrollTo({top: 0})
@@ -72,7 +70,11 @@ console.log(selectedTags)
                 {tagsList.map((qtaglist, index) => (
                   <div className="taglist-row">
                     {qtaglist.map((tag) => (
-                      <ArticleEachTag   tagOnClick={tagOnClick}selectedTags={selectedTags} tag={tag}></ArticleEachTag>
+                      <ArticleEachTag
+                        tagOnClick={tagOnClick}
+                        selectedTags={selectedTags}
+                        tag={tag}
+                      ></ArticleEachTag>
                     ))}
                   </div>
                 ))}
@@ -86,44 +88,50 @@ console.log(selectedTags)
   );
 };
 
-const ArticleEachTag = ({selectedTags,tagOnClick,tag})=>{
-  const [active,setActive]=useState(false)
-  useEffect(()=>{
-    const toggle = selectedTags.find((item)=>item===tag)
-    if (toggle){
-      setActive(true)
-    }else{
-      setActive(false)
+const ArticleEachTag = ({ selectedTags, tagOnClick, tag }) => {
+  const [active, setActive] = useState(false);
+  useEffect(() => {
+    const toggle = selectedTags.find((item) => item === tag);
+    if (toggle) {
+      setActive(true);
+    } else {
+      setActive(false);
     }
-  },[selectedTags])
-  console.log(selectedTags)
-   
+  }, [selectedTags]);
+  console.log(selectedTags);
 
-  return(
-    <div className={active?"article-each-tag article-each-active":"article-each-tag"}  onClick={(e)=>{tagOnClick(e) }}>{tag}</div>
+  return (
+    <div
+      className={
+        active ? "article-each-tag article-each-active" : "article-each-tag"
+      }
+      onClick={(e) => {
+        tagOnClick(e);
+      }}
+    >
+      {tag}
+    </div>
     // <div className="article-each-tag" selectedTag={selectedTags} onClick={(e)=>tagOnClick(e)}>{tag}</div>
- 
-  )
-
-}
+  );
+};
 
 const ArticleCard = ({ item }) => {
- 
   return (
     <Link className="link" to="/article/id">
-     <div className="articleCard-cont">
-      <div className="articleCard-textblock">
-        <div className="articleCard-title">{item.articleTitle}</div>
-        <div className="articleCard-description">{item.articleDescription}</div>
-        <div className="articleCard-date-tags">
-          <div className="articleCard-date">{item.date}</div>
-          <div className="articleCard-tags">{item.tags}</div>
+      <div className="articleCard-cont">
+        <div className="articleCard-textblock">
+          <div className="articleCard-title">{item.articleTitle}</div>
+          <div className="articleCard-description">
+            {item.articleDescription}
+          </div>
+          <div className="articleCard-date-tags">
+            <div className="articleCard-date">{item.date}</div>
+            <div className="articleCard-tags">{item.tags}</div>
+          </div>
         </div>
+        <div className="articleCard-img"></div>
       </div>
-      <div className="articleCard-img"></div>
-    </div>
     </Link>
-   
   );
 };
 export default ArticleList;

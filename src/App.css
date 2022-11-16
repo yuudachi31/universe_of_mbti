@@ -257,7 +257,8 @@ color: #2A2A2A;
   margin-top: 50px;
   /* flex:1 1 1 1; */
   /* background-color: #2B2B2B; */
-  /* justify-content: space-between; */
+  justify-content: center;
+  /* 寬度超過1650時會跑版 所以加上justify-content: center; */
 }
 .section-each-type{
   /* width: 16vw; */
@@ -703,6 +704,23 @@ color: #000000;
   width: 100%;
 margin-top: 240px;
 }
+.article-detail-cont p{
+  font-family: 'ヒラギノ角ゴ ProN W6';
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 175%;
+}
+.article-detail-cont h2{
+  /* font-family: 'ヒラギノ角ゴ ProN W8'; */
+
+  font-style: normal;
+  font-weight: 800;
+  font-size: 25px;
+  /* line-height: 175%; */
+  margin:35px 0;
+}
 .article-detail-bigtitle{
   font-family: 'ヒラギノ角ゴ ProN W8';
 font-style: normal;
@@ -752,6 +770,9 @@ margin-top: 50px;
 color: #2B2B2B;
 
 }
+
+
+
 .article-title{
   font-family: 'ヒラギノ角ゴ ProN W8';
 
@@ -1111,3 +1132,8 @@ color:#fff;
 background-color: #000000;
 
   }
+
+  .testText{
+
+  }
+  

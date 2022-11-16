@@ -8,7 +8,7 @@ import ArticleList from "./pages/ArticleList";
 import Article from "./pages/article";
 import AdminView from "./pages/admin";
 import EditArticleView from "./pages/EditArticle";
-
+import MarkdownTest from "./pages/MarkdownTest";
 const testarray = [{
 id:0,
 set:true,
@@ -39,6 +39,7 @@ function App() {
                 <Route path="/personality/:type" element={<PersonalityView/>} />
                 <Route path="/articleList" element={<ArticleList/>} />
                 <Route path="/article/:articleId" element={<Article/>} />
+                <Route path="/markdownTest" element={<MarkdownTest/>} />
                 <Route path="/team" element={<>team</>} />
             </Routes>
         </BrowserRouter>
