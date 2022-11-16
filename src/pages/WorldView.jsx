@@ -7,3 +7,10 @@ import articleJson from "../json/articleList.json";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 // import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+
+const WorldView = ()=>{
+    return(<>
+    aa
+    </>)
+}
+export default WorldView

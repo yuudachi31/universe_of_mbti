@@ -9,6 +9,7 @@ import Article from "./pages/article";
 import AdminView from "./pages/admin";
 import EditArticleView from "./pages/EditArticle";
 import MarkdownTest from "./pages/MarkdownTest";
+import WorldView from "./pages/WorldView";
 const testarray = [{
 id:0,
 set:true,
@@ -35,7 +36,7 @@ function App() {
                 <Route path="/" element={<Homeview/>} />
                 <Route path="/admin" element={<AdminView />} />
                 <Route path="/admin/edit/:articleId" element={<EditArticleView/>} />
-                <Route path="/worldView" element={<>worldView</>} />
+                <Route path="/worldView" element={<WorldView/>} />
                 <Route path="/personality/:type" element={<PersonalityView/>} />
                 <Route path="/articleList" element={<ArticleList/>} />
                 <Route path="/article/:articleId" element={<Article/>} />
