@@ -42,7 +42,7 @@ a{
 }
 @font-face {
   font-family: 'ヒラギノ角ゴ ProN W6';
-  src: url(./fonts/ヒラギノ角ゴシック\ W6.ttc) format('');
+  src: url(./fonts/HiraKakuProN-W6.otf) format('opentype');
 }
 
 @font-face {
@@ -51,13 +51,12 @@ a{
 }
 @font-face {
   font-family: 'ヒラギノ角ゴ ProN W8';
-  src: url(./fonts/ヒラギノ角ゴシック\ W8.ttc) format('');
+  src: url(./fonts/HiraKakuStdN-W8.otf) format('opentype');
 }
-/* *{
-  font-family: 'Hiragino Kaku Gothic ProN';
-font-style: normal;
 
-} */
+/* CSS3不支援ttc轉換 所以將常用的W6和W8 轉為otf再format */
+
+
 
 
 .dsp-f{
@@ -73,24 +72,7 @@ font-style: normal;
  z-index: 2;
 
 }
-.mb50{
-  margin-bottom: 50px;
-}
-.mt40{
-  margin-top: 40px;
-}
-.ml25{
-  margin-left: 25px;
-}
-.mr10{
-  margin-right: 10px;
-}
-.mb25{
-  margin-bottom: 25px;
-}
-.mr50{
-margin-right: 50px;
-}
+
 .nav-management{
   font-family: 'ヒラギノ角ゴ ProN W6';
 font-style: normal;
@@ -546,7 +528,7 @@ align-items: center;
   position: relative;
 
 }
-.bottom-line{
+.rounded-bottom-line{
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -1142,7 +1124,121 @@ background-color: #000000;
 
   }
 
-  .testText{
+/*---------WorldView---------------------*/
+  .worldView-outSet{
+width: 100%;
+min-height: 500px;
+display: flex;
+flex-direction: column;
+  }
+  .worldView-cont{
+    margin: 0 auto;
+    /* width: 90vw; */
+    min-height: 1000px;
+    /* max-width: 1520px; */
+    width: 100%;
+    /* background-color: rgb(223, 172, 172); */
+display: flex;
+margin-top: 240px;
 
   }
+  .worldView-elevator-cont{
+    width: 20vw;
+    max-width: 350px;
+    min-width: 280px;
+    height: 600px;
+    /* background-color: #F5F5F5; */
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+    position: sticky;
+  top:200px;
+  }
+  #test-a{
+    height: 1400px;
+    width: 100px;
+background-color: yellow;
+  }
+  #test-b{
+    height: 1400px;
+    width: 100px;
+    background-color: green;
+  }
+  .mt200{
+    margin-top: 200px;
+  }
+  .worldView-content-outSet{
+    flex: 1;
+    /* background-color: #2821a0; */
+    /* border-left: #000 1px dashed; */
+  /* width: 90%; */
+/* height: 900px; */
+background-image: linear-gradient(to bottom, rgb(37, 60, 204) 0%, rgb(42, 30, 208) 60%, transparent 50%);
+background-size:1px 20px;
+background-repeat: repeat-y;
+  }
+  .worldView-content-cont{
+    width: 82%;
+    min-height: 500px;
+    /* background-color: #c3f424; */
+    margin: 0 auto;
+  }
+  .WV-bottom-line{
+border-bottom: #000 1px solid;
+  }
+  .WV_img1{
+    width: 100%;
+    margin-top: 50px;
+  }
+  .worldView-title{
+    font-family: 'ヒラギノ角ゴ ProN W8';
+font-size: 36px;
+font-style: normal;
+font-weight: 800;
+  }
+  .worldView-subtitle{
+    font-family: 'ヒラギノ角ゴ ProN W8';
+font-size: 30px;
+font-style: normal;
+font-weight: 800;
+  }
+  .worldViewArticle{
+    font-family: 'ヒラギノ角ゴ ProN W6';
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 800;
+    margin-bottom: 30px;
+  }
+
+
+  .mb50{
+    margin-bottom: 50px;
+  }
+  .mb100{
+    margin-bottom: 100px;
+  }
   
+  .mt40{
+    margin-top: 40px;
+  }
+  .mt50{
+    margin-top: 50px;
+  }
+  .mt100{
+    margin-top: 100px;
+  }
+  .ml25{
+    margin-left: 25px;
+  }
+  .mr10{
+    margin-right: 10px;
+  }
+  .mb25{
+    margin-bottom: 25px;
+  }
+  .mb30{
+    margin-bottom: 30px;
+  }
+  .mr50{
+  margin-right: 50px;
+  }

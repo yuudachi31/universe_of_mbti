@@ -56,7 +56,7 @@ const ArticleList = () => {
                 src="/images/article_cover.png"
               />
             </div>
-            <div className="bottom-line"></div>
+            <div className="rounded-bottom-line"></div>
           </div>
           <div className="article-content-container">
             <div className="articleList">
@@ -122,7 +122,7 @@ const ArticleCard = ({ item }) => {
         <div className="articleCard-textblock">
           <div className="articleCard-title">{item.articleTitle}</div>
           <div className="articleCard-description">
-            {item.articleDescription}
+            {item.articleContent}
           </div>
           <div className="articleCard-date-tags">
             <div className="articleCard-date">{item.date}</div>
