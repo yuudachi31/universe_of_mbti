@@ -137,7 +137,7 @@ const WorldView = () => {
 
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar posr={true}></Navbar>
       <div className="worldView-outSet">
         <div className="worldView-cont">
           <Elevator
@@ -148,10 +148,7 @@ const WorldView = () => {
           ></Elevator>
           <div className="worldView-content-outSet">
             <div className="worldView-content-cont">
-              <WorldIntroduce
-                ref={sectionRef_1}
-             
-              ></WorldIntroduce>
+              <WorldIntroduce ref={sectionRef_1}></WorldIntroduce>
               <WhatIsMBTI ref={sectionRef_2}></WhatIsMBTI>
               <FourDimensions ref={sectionRef_3}></FourDimensions>
               <Cognition ref={sectionRef_4}></Cognition>
@@ -165,11 +162,10 @@ const WorldView = () => {
   );
 };
 const Elevator = (props) => {
-    
   const [currentElevator, setcurrentElevator] = useState(null);
   const { sectionRef_1, sectionRef_2, sectionRef_3, sectionRef_4 } = props;
   const scrollToBlock = (index) => {
-    console.log(index)
+    console.log(index);
     let element;
     // switch (index) {
     //   case 0:
@@ -182,18 +178,17 @@ const Elevator = (props) => {
     //     element = sectionRef_4.current.getRef().current;
     // }
     if (index === 0) {
-        element = sectionRef_1.current.getRef().current;
-      } else if (index === 1) {
-        element = sectionRef_2.current.getRef().current;
-      }else if (index === 2) {
-        element = sectionRef_3.current.getRef().current;
-      }else if (index === 3) {
-        element = sectionRef_4.current.getRef().current;
-      }
-      if (!element) return;
-  console.log(element)
+      element = sectionRef_1.current.getRef().current;
+    } else if (index === 1) {
+      element = sectionRef_2.current.getRef().current;
+    } else if (index === 2) {
+      element = sectionRef_3.current.getRef().current;
+    } else if (index === 3) {
+      element = sectionRef_4.current.getRef().current;
+    }
+    if (!element) return;
+    console.log(element);
 
-  
     let { top } = cumulativeOffset(element);
     // console.log(top)
     window.scrollTo({
@@ -249,7 +244,11 @@ const Elevator = (props) => {
     <div className="worldView-elevator-cont">
       {elevatorArray.map((item, index) => (
         <>
-          <ElevatorCont onClick={()=>{scrollToBlock(index)}}>
+          <ElevatorCont
+            onClick={() => {
+              scrollToBlock(index);
+            }}
+          >
             <ElevatorLink id={index} active={currentElevator === index}>
               {item.text}
             </ElevatorLink>
@@ -292,7 +291,7 @@ const WorldIntroduce = forwardRef((props, ref) => {
   );
 });
 const WhatIsMBTI = forwardRef((props, ref) => {
-    const returnRef = useRef();
+  const returnRef = useRef();
   useImperativeHandle(
     ref,
     () => ({
@@ -304,7 +303,9 @@ const WhatIsMBTI = forwardRef((props, ref) => {
   );
   return (
     <>
-      <div className="worldView-title  mt100 mb30" ref={returnRef}>MBTI是什麼？</div>
+      <div className="worldView-title  mt100 mb30" ref={returnRef}>
+        MBTI是什麼？
+      </div>
       <div className="worldViewArticle">
         MBTI 中文全名為邁爾斯-布里格斯性格分類指標（Myers-Briggs Type
         Indicator），是一種人格類型學的分類模式，為美國作家Katharine Cook Briggs
@@ -333,7 +334,7 @@ const WhatIsMBTI = forwardRef((props, ref) => {
 });
 
 const FourDimensions = forwardRef((props, ref) => {
-    const returnRef = useRef();
+  const returnRef = useRef();
   useImperativeHandle(
     ref,
     () => ({
@@ -345,7 +346,9 @@ const FourDimensions = forwardRef((props, ref) => {
   );
   return (
     <>
-      <div className="worldView-title mt100" ref={returnRef}>四大維度介紹</div>
+      <div className="worldView-title mt100" ref={returnRef}>
+        四大維度介紹
+      </div>
       <Image className="WV_img1 mb50" src="/images/WV_img3.png"></Image>
       <div className="worldViewArticle ">
         MBTI
@@ -405,7 +408,7 @@ const EachDimensionSection = ({ item }) => {
 };
 
 const Cognition = forwardRef((props, ref) => {
-    const returnRef = useRef();
+  const returnRef = useRef();
   useImperativeHandle(
     ref,
     () => ({
