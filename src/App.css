@@ -42,8 +42,12 @@ a{
 }
 @font-face {
   font-family: 'ヒラギノ角ゴ ProN W6';
-  src: url(./fonts/HiraKakuProN-W6.otf) format('opentype');
+  src: url(./fonts/ヒラギノ角ゴシック\ W6.ttc) format('');
 }
+/* @font-face {
+  font-family: 'ヒラギノ角ゴ ProN W6';
+  src: url(./fonts/HiraKakuProN-W6.otf) format('opentype');
+} */
 
 @font-face {
   font-family: 'ヒラギノ角ゴ ProN W7';
@@ -51,8 +55,12 @@ a{
 }
 @font-face {
   font-family: 'ヒラギノ角ゴ ProN W8';
-  src: url(./fonts/HiraKakuStdN-W8.otf) format('opentype');
+  src: url(./fonts/ヒラギノ角ゴシック\ W8.ttc) format('');
 }
+/* @font-face {
+  font-family: 'ヒラギノ角ゴ ProN W8';
+  src: url(./fonts/HiraKakuStdN-W8.otf) format('opentype');
+} */
 
 /* CSS3不支援ttc轉換 所以將常用的W6和W8 轉為otf再format */
 
@@ -1209,6 +1217,51 @@ font-weight: 800;
     font-weight: 800;
     margin-bottom: 30px;
   }
+  .each-dimension-title{
+    font-family: 'ヒラギノ角ゴ ProN W8';
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .each-dimension-title::before{
+content: " ";
+width: 16px;
+height: 16px;
+background-color: #2A2A2A;
+display: inline-block;
+margin-right: 20px;
+
+  }
+  .each-dimension-description{
+    font-family: 'ヒラギノ角ゴ ProN W6';
+    font-size: 25px;
+    font-style: normal;
+    font-weight:600;
+  }
+  .eachSide-cont{
+    display: flex;
+    align-items: center;
+  }
+.eachSide-intro{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   .mb50{
@@ -1217,7 +1270,12 @@ font-weight: 800;
   .mb100{
     margin-bottom: 100px;
   }
-  
+  .mt15{
+margin-top: 15px;
+  }
+  .mt30{
+    margin-top: 30px;
+  }
   .mt40{
     margin-top: 40px;
   }
@@ -1239,6 +1297,15 @@ font-weight: 800;
   .mb30{
     margin-bottom: 30px;
   }
+  .mb100{
+    margin-bottom: 100px;
+  }
+  .mr45{
+    margin-right: 45px;
+  }
   .mr50{
   margin-right: 50px;
+  }
+  .h800{
+    height: 800px;
   }
