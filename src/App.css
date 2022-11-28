@@ -665,6 +665,7 @@ color: #000000;
   margin-bottom: 18px;
 }
 .article-each-tag{
+  user-select:none;
   width: 84px;
   height: 36px;
   border: #000 3px solid;

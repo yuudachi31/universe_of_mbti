@@ -1,12 +1,15 @@
-import { useDispatch, useSelector } from "react-redux";
+
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import personalityJson from "../json/personality.json";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import {selectSelectTag,setSelectedTags} from "../redux/selectTagSlice"
 import articleListJson from "../json/articleList.json";
+import {selectArticle} from "../redux/articleSlice"
 // import {} from "../redux/adminSlice"
 const tagsList = [
   ["INTJ", "INTP", "ENTJ", "ENTP"],
@@ -15,24 +18,48 @@ const tagsList = [
   ["ISTP", "ISFP", "ESTP", "ESFP"],
 ];
 const ArticleList = () => {
-  const [selectedTags, setSelectedTags] = useState([]);
-
+  // const [selectedTags, setSelectedTags] = useState([]);
+const selectedTags = useSelector(selectSelectTag)
+const articleList = useSelector(selectArticle)
+const dispatch = useDispatch();
   const tagOnClick = (e) => {
-    // console.log("s");
-    let type = e.target.innerHTML;
-    if (selectedTags.find((item) => item === type)) {
-      selectedTags.forEach((item, index) => {
-        let arr = selectedTags;
-        if (item === type) {
-          arr.splice(index, 1);
-          setSelectedTags([...arr]);
-        }
-      });
-    } else {
-      setSelectedTags([...selectedTags, type]);
-    }
-    console.log(selectedTags);
-  };
+  // console.log("s");
+  let type = e.target.innerHTML;
+  if (selectedTags.find((item) => item === type)) {
+    selectedTags.forEach((item, index) => {
+      let arr = [...selectedTags];
+      if (item === type) {
+        arr.splice(index, 1);
+        // setSelectedTags([...arr]);
+        dispatch(
+          setSelectedTags([...arr])
+        )
+      }
+    });
+  } else {
+    dispatch(
+    setSelectedTags([...selectedTags, type])
+    )
+  }
+  console.log(selectedTags);
+};
+
+  // const tagOnClick = (e) => {
+  //   // console.log("s");
+  //   let type = e.target.innerHTML;
+  //   if (selectedTags.find((item) => item === type)) {
+  //     selectedTags.forEach((item, index) => {
+  //       let arr = selectedTags;
+  //       if (item === type) {
+  //         arr.splice(index, 1);
+  //         setSelectedTags([...arr]);
+  //       }
+  //     });
+  //   } else {
+  //     setSelectedTags([...selectedTags, type]);
+  //   }
+  //   console.log(selectedTags);
+  // };
 
   useEffect(() => {
     // window.scrollTo({top: 0})
@@ -60,7 +87,7 @@ const ArticleList = () => {
           </div>
           <div className="article-content-container">
             <div className="articleList">
-              {articleListJson.map((item) => (
+              {articleList.map((item) => (
                 <ArticleCard item={item} />
               ))}
             </div>
