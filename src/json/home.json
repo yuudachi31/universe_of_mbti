@@ -82,6 +82,33 @@
             }
         ]
 
+    },
+    {
+        "mainType":"技藝家",
+        "mainTypeEnglish":"ARTISANS",
+        "feature":"SP型 勇於冒險的天才藝術家",
+        "pictures":[
+            {
+                "imageUrl":"./images/ISTP.png",
+                "labelImage":"istpabel.png",
+                "typeLetter": "ISTP"
+            },
+            {
+                "imageUrl":"./images/ISFP.png",
+                "labelImage":"isfpLabel.png",
+                "typeLetter": "ISFP"
+            },
+            {
+                "imageUrl":"./images/ESTP.png",
+                "labelImage":"estpLabel.png",
+                "typeLetter": "ESTP"
+            },
+            {
+                "imageUrl":"./images/ESFP.png",
+                "labelImage":"esfpLabel.png",
+                "typeLetter": "ESFP"
+            }
+        ]
     }
     
 ]

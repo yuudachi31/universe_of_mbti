@@ -73,7 +73,7 @@ a{
 .navbar{
  width: 100%;
  /* background-color: aqua;  */
- height: 130px;
+ height: 7.5vw;
  display: flex;
  align-items: center;
  position: fixed;
@@ -115,8 +115,8 @@ line-height: 39px;
   /* color:"" ; */
 }
 .navbar-logo{
-  width: 60px;
-  height: 60px;
+  width: 3.5vw;
+  height: 3.5vw;
   /* margin-top: 60px; */
   margin-left: 70px;
 }
@@ -134,20 +134,21 @@ align-items: center;
   /* background-color: aqua; */
   margin-right: 40px;
   font-weight: 600;
-font-size: 26px;
-line-height: 39px;
-padding: 5px 5px;
-text-decoration: none;
-color: black;
-text-align: center;
-letter-spacing: 0.05em;
-}
+  font-size: 1.5vw;
+  line-height: 39px;
+  padding: 0.05vw 0.05vw;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  letter-spacing: 0.05em;
+  }
+
 .footer-cont{
-height: 150px;
-width: 100%;
-display: flex;
-justify-content: space-between;
-align-items: center;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
@@ -283,10 +284,13 @@ color: #2A2A2A;
   transition: 0.2s;
 }
 
+.section-container:not(:last-child) .section-line{
+  background: #000;
+}
+
 .section-line{
   height: 3px;
   margin: 5vw 0px ;
-  background: #000;
 }
 @media screen and (max-width: 768px){
   .section-feature-list{
