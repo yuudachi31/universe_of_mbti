@@ -10,6 +10,13 @@ import AdminView from "./pages/admin";
 import EditArticleView from "./pages/EditArticle";
 import MarkdownTest from "./pages/MarkdownTest";
 import WorldView from "./pages/WorldView";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+
+const queryClient = new QueryClient();
+
 const testarray = [{
 id:0,
 set:true,
@@ -30,6 +37,7 @@ function App() {
 
   return (
     <div className="App">
+       <QueryClientProvider client={queryClient}>
       <Provider store={store}>
       <BrowserRouter>
             <Routes>
@@ -45,7 +53,7 @@ function App() {
             </Routes>
         </BrowserRouter>
       </Provider>
-      
+      </QueryClientProvider>
     </div>
   );
 }

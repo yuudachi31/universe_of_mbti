@@ -606,16 +606,23 @@ color: #666666;
   display: flex;
   /* margin-top: 25px; */
   align-items: center;
-  
+  overflow: hidden;
+  margin-right: 8px;
+  position: relative;
+  height: 30px;
 }
-
+.articleCard-tags-posa{
+  position: absolute;
+  display: flex;
+  } 
+  
 .articleCard-date{
   font-family: 'ヒラギノ角ゴ ProN W6';
 font-style: normal;
 font-weight: 600;
 font-size: 18px;
 letter-spacing: 0.05em;
-
+width: 80px;
 color: #666666;
 
 }
@@ -1249,7 +1256,6 @@ margin-right: 20px;
 .eachSide-intro{
 
 }
-
 
 
 

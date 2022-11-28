@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -7,9 +6,12 @@ import Footer from "../components/Footer";
 import personalityJson from "../json/personality.json";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import {selectSelectTag,setSelectedTags} from "../redux/selectTagSlice"
+import { selectSelectTag, setSelectedTags } from "../redux/selectTagSlice";
 import articleListJson from "../json/articleList.json";
-import {selectArticle} from "../redux/articleSlice"
+import { selectArticle } from "../redux/articleSlice";
+import MediaQuery from "react-responsive";
+import { useAllArticle } from "../react-query/index";
+
 // import {} from "../redux/adminSlice"
 const tagsList = [
   ["INTJ", "INTP", "ENTJ", "ENTP"],
@@ -17,32 +19,70 @@ const tagsList = [
   ["ISTJ", "ISFJ", "ESTJ", "ESFJ"],
   ["ISTP", "ISFP", "ESTP", "ESFP"],
 ];
+
 const ArticleList = () => {
   // const [selectedTags, setSelectedTags] = useState([]);
-const selectedTags = useSelector(selectSelectTag)
-const articleList = useSelector(selectArticle)
-const dispatch = useDispatch();
-  const tagOnClick = (e) => {
-  // console.log("s");
-  let type = e.target.innerHTML;
-  if (selectedTags.find((item) => item === type)) {
-    selectedTags.forEach((item, index) => {
-      let arr = [...selectedTags];
-      if (item === type) {
-        arr.splice(index, 1);
-        // setSelectedTags([...arr]);
-        dispatch(
-          setSelectedTags([...arr])
-        )
+  const selectedTags = useSelector(selectSelectTag);
+  const articleList = useSelector(selectArticle);
+  
+  const { data, isLoading } = useAllArticle("none");
+
+if(selectedTags.length!==0){
+  selectedTags.forEach((item)=>{
+
+  })
+}
+
+
+  console.log(data);
+  const articleData = data?.data || [];
+  const [okArticleArray,setArray]=useState([...articleData])
+  let filtedData = articleData
+  useEffect(() => {
+    filtedData = []
+    if(selectedTags.length!==0){
+      articleData.forEach((article)=>{
+        let labelArray=[]
+        article.all_labels.forEach((label)=>{
+          labelArray.push(label.label)
+        })
+        let fit = true
+        selectedTags.forEach((tag)=>{
+          if(!labelArray.includes(tag)){
+            fit = false
+          }
+        })
+        if(fit){
+          filtedData.push(article)
+        }
+        setArray(filtedData)
       }
-    });
-  } else {
-    dispatch(
-    setSelectedTags([...selectedTags, type])
-    )
-  }
-  console.log(selectedTags);
-};
+      
+      )
+  
+    }else{
+      setArray(articleData)
+    }
+  }, [selectedTags]);
+  
+  const dispatch = useDispatch();
+  const tagOnClick = (e) => {
+    // console.log("s");
+    let type = e.target.innerHTML;
+    if (selectedTags.find((item) => item === type)) {
+      selectedTags.forEach((item, index) => {
+        let arr = [...selectedTags];
+        if (item === type) {
+          arr.splice(index, 1);
+          // setSelectedTags([...arr]);
+          dispatch(setSelectedTags([...arr]));
+        }
+      });
+    } else {
+      dispatch(setSelectedTags([...selectedTags, type]));
+    }
+    console.log(selectedTags);
+  };
 
   // const tagOnClick = (e) => {
   //   // console.log("s");
@@ -85,11 +125,15 @@ const dispatch = useDispatch();
             </div>
             <div className="rounded-bottom-line"></div>
           </div>
+          <MediaQuery minWidth={769}></MediaQuery>
           <div className="article-content-container">
             <div className="articleList">
               {articleList.map((item) => (
                 <ArticleCard item={item} />
               ))}
+              {/* {okArticleArray.map((item) => (
+                <ArticleCard item={item} />
+              ))} */}
             </div>
             <div className="article-tags-cont">
               <div className="article-tags-title">標籤選擇</div>
@@ -125,7 +169,6 @@ const ArticleEachTag = ({ selectedTags, tagOnClick, tag }) => {
       setActive(false);
     }
   }, [selectedTags]);
-  console.log(selectedTags);
 
   return (
     <div
@@ -159,6 +202,25 @@ const ArticleCard = ({ item }) => {
         <div className="articleCard-img"></div>
       </div>
     </Link>
+
+
+    // <Link className="link" to={"/article/"+3}>
+    //   <div className="articleCard-cont">
+    //     <div className="articleCard-textblock">
+    //       <div className="articleCard-title">{item.title}</div>
+    //       <div className="articleCard-description">{item.content}</div>
+    //       <div className="articleCard-date-tags">
+    //         <div className="articleCard-tags-posa">
+    //           <div className="articleCard-date">OCT 24</div>
+    //           {item.all_labels.map((item) => (
+    //             <div className="articleCard-tags">{item.label}</div>
+    //           ))}
+    //         </div>
+    //       </div>
+    //     </div>
+    //     <div className="articleCard-img"></div>
+    //   </div>
+    // </Link>
   );
 };
 export default ArticleList;
