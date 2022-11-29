@@ -5,7 +5,9 @@ import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import homeData from "../json/home.json";
 import Banner from "../components/Banner";
+import MobileBanner from "../components/MobileBanner"
 import HomeSection from "../components/HomeSection";
+import MediaQuery from "react-responsive";
 // import {} from "../redux/adminSlice"
 const HomeView = () => {
   useEffect(() => {
@@ -28,6 +30,12 @@ const HomeView = () => {
     <>
       <Navbar posr={true} ></Navbar>
       <div className="home-container">
+        {/* <MediaQuery maxWidth={700}>
+        <MobileBanner></MobileBanner>
+        </MediaQuery>
+        <MediaQuery minWidth={701}>
+        <Banner></Banner>
+        </MediaQuery> */}
         <Banner></Banner>
         <div className="home-content">
           {homeData.map((item) => {

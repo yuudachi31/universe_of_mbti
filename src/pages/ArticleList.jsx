@@ -24,47 +24,68 @@ const ArticleList = () => {
   // const [selectedTags, setSelectedTags] = useState([]);
   const selectedTags = useSelector(selectSelectTag);
   const articleList = useSelector(selectArticle);
-  
+
   const { data, isLoading } = useAllArticle("none");
 
-if(selectedTags.length!==0){
-  selectedTags.forEach((item)=>{
-
-  })
-}
-
+  if (selectedTags.length !== 0) {
+    selectedTags.forEach((item) => {});
+  }
 
   console.log(data);
   const articleData = data?.data || [];
-  const [okArticleArray,setArray]=useState([...articleData])
-  let filtedData = articleData
+  const [okArticleArray, setArray] = useState([...articleData]);
+  let filtedData = articleData;
+  // useEffect(() => {
+  //   filtedData = []
+  //   if(selectedTags.length!==0){
+  //     articleData.forEach((article)=>{
+  //       let labelArray=[]
+  //       article.all_labels.forEach((label)=>{
+  //         labelArray.push(label.label)
+  //       })
+  //       let fit = true
+  //       selectedTags.forEach((tag)=>{
+  //         if(!labelArray.includes(tag)){
+  //           fit = false
+  //         }
+  //       })
+  //       if(fit){
+  //         filtedData.push(article)
+  //       }
+  //       setArray(filtedData)
+  //     }
+
+  //     )
+
+  //   }else{
+  //     setArray(articleData)
+  //   }
+  // }, [selectedTags]);
+
   useEffect(() => {
-    filtedData = []
-    if(selectedTags.length!==0){
-      articleData.forEach((article)=>{
-        let labelArray=[]
-        article.all_labels.forEach((label)=>{
-          labelArray.push(label.label)
-        })
-        let fit = true
-        selectedTags.forEach((tag)=>{
-          if(!labelArray.includes(tag)){
-            fit = false
+    filtedData = [];
+    if (selectedTags.length !== 0) {
+      articleList.forEach((article) => {
+        let labelArray = [];
+        article.tags.forEach((label) => {
+          labelArray.push(label);
+        });
+        let fit = true;
+        selectedTags.forEach((tag) => {
+          if (!labelArray.includes(tag)) {
+            fit = false;
           }
-        })
-        if(fit){
-          filtedData.push(article)
+        });
+        if (fit) {
+          filtedData.push(article);
         }
-        setArray(filtedData)
-      }
-      
-      )
-  
-    }else{
-      setArray(articleData)
+        setArray(filtedData);
+      });
+    } else {
+      setArray(articleListJson);
     }
   }, [selectedTags]);
-  
+
   const dispatch = useDispatch();
   const tagOnClick = (e) => {
     // console.log("s");
@@ -128,7 +149,7 @@ if(selectedTags.length!==0){
           <MediaQuery minWidth={769}></MediaQuery>
           <div className="article-content-container">
             <div className="articleList">
-              {articleList.map((item) => (
+              {okArticleArray.map((item) => (
                 <ArticleCard item={item} />
               ))}
               {/* {okArticleArray.map((item) => (
@@ -191,18 +212,23 @@ const ArticleCard = ({ item }) => {
       <div className="articleCard-cont">
         <div className="articleCard-textblock">
           <div className="articleCard-title">{item.articleTitle}</div>
-          <div className="articleCard-description">
-            {item.articleContent}
-          </div>
+          <div className="articleCard-description">{item.articleContent}</div>
           <div className="articleCard-date-tags">
-            <div className="articleCard-date">{item.date}</div>
-            <div className="articleCard-tags">{item.tags}</div>
+            <div className="articleCard-tags-posa">
+              <div className="articleCard-date">{item.date}</div>
+              {item.tags ? (
+                <>
+                  {item.tags.map((item) => (
+                    <div className="articleCard-tags">{item}</div>
+                  ))}
+                </>
+              ) : null}
+            </div>
           </div>
         </div>
         <div className="articleCard-img"></div>
       </div>
     </Link>
-
 
     // <Link className="link" to={"/article/"+3}>
     //   <div className="articleCard-cont">

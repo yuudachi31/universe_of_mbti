@@ -66,7 +66,7 @@ const ArticleView = () => {
 
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar posr={true}></Navbar>
       <div className="big-container">
         <div className="article-detail-cont">
           <div className="article-detail-bigtitle">
