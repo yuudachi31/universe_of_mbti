@@ -44,6 +44,7 @@ function App() {
                 <Route path="/" element={<Homeview/>} />
                 <Route path="/admin" element={<AdminView />} />
                 <Route path="/admin/edit/:articleId" element={<EditArticleView/>} />
+                <Route path="/admin/NewArticle" element={<EditArticleView/>} />
                 <Route path="/worldView" element={<WorldView/>} />
                 <Route path="/personality/:type" element={<PersonalityView/>} />
                 <Route path="/articleList" element={<ArticleList/>} />

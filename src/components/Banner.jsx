@@ -1,5 +1,6 @@
 import '../banner.css';
 import '../App.css';
+import { Link } from "react-router-dom";
 
 const Banner = () => {
 
@@ -12,9 +13,9 @@ const Banner = () => {
         透過MBTI來認識<br></br>誕生於宇宙中<br></br>獨一無二的自己
         </div>
         <div className="item button">
-        <div className="b_text">
+        <Link to={"/worldView"} className="b_text">
           世界觀 GO!
-        </div>
+        </Link>
         </div>
 
       </div>

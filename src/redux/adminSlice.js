@@ -19,6 +19,8 @@ const initialState = {
       listContent: [],
     },
   ],
+  adminIslogin:false,
+  accessToken:""
 };
 
 const adminSlice = createSlice({
@@ -35,13 +37,22 @@ const adminSlice = createSlice({
       article.normalContent = action.payload.normalContent;
       state.articleList = [article, ...list];
     },
+    adminToLogin:(state, action)=>{
+      state.adminIslogin=true;
+      state.accessToken=action.payload;
+    },
+    adminLogout:(state, action)=>{
+      state.adminIslogin=false;
+      state.accessToken="";
+    }
   },
 });
 //export state to global，可用useSelector呼叫store
-export const Selectadmin = (state) => state.admin.articleList;
-
+export const selectadmin = (state) => state.admin.articleList;
+export const selectToken = (state) => state.admin.accessToken;
+export const selectAdminIsLogin = (state)=> state.admin.adminIslogin;
 //export actions to global，可用useDispatch呼叫action
-export const { articleEditing } = adminSlice.actions;
+export const { articleEditing, adminToLogin,adminLogout} = adminSlice.actions;
 
 //export reducer to global
 export default adminSlice.reducer;

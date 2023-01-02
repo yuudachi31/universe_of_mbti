@@ -36,15 +36,16 @@ const tagsList = [
   "ESFP",
 ];
 
-const EditArticleView = () => {
+const NewArticleView = () => {
   const token = useSelector(selectToken);
   const [selectedTags, setSelectedTags] = useState([]);
   const { articleId } = useParams();
-  const [titleValue, setTitleValue] = useState("");
+  const [titleValue,setTitleValue]= useState("")
   const { targetArticle, isLoading, refetch, isSuccess } =
     useOneArticle(articleId);
-  const [selectedTagList, setTagList] = useState("");
-  const [articleData, setArticleData] = useState({
+    const [selectedTagList,setTagList]=useState("")
+  const [articleData, setArticleData] = useState(
+    {
     publish: true,
     all_tags: [{ tag: "", id: 0 }],
     articleTitle: "stng",
@@ -55,26 +56,27 @@ const EditArticleView = () => {
     author_1: "string",
     author_2: "string",
     articleContent: " ",
-  });
+  }
+  );
 
-  // console.log(articleData)
+// console.log(articleData)
   useEffect(() => {
     let taglist = [];
     // 關鍵
-    setTitleValue(targetArticle?.articleTitle);
-    setArticleData(targetArticle);
+    setTitleValue(targetArticle?.articleTitle)
+    setArticleData(targetArticle)
     targetArticle?.all_tags.forEach((tag) => {
       taglist.push(tag.id);
       // console.log(taglist)
     });
-    setTagList(taglist);
+    setTagList(taglist)
   }, [isSuccess]);
-
+  
   // console.log(articleData);
   const tagOnClick = (e) => {
     console.log("s");
     let type = e.target.innerHTML;
-    let num = tagsList.indexOf(type) + 1;
+    let num = tagsList.indexOf(type)+1
     if (selectedTagList.find((item) => item === num)) {
       selectedTagList.forEach((item, index) => {
         let arr = selectedTagList;
@@ -88,7 +90,7 @@ const EditArticleView = () => {
     }
     console.log(selectedTagList);
   };
-
+  
   useEffect(() => {
     // window.scrollTo({top: 0})
   }, []);
@@ -103,13 +105,13 @@ const EditArticleView = () => {
   };
 
   async function filterArticleById(m) {
-    let articleList = await targetArticle;
-
+    let articleList = await targetArticle
+    
     return articleList;
   }
   function successCallback(result) {
     setArticleData(result);
-    setTitleValue(result.articleTitle);
+    setTitleValue(result.articleTitle)
   }
   function failureCallback(error) {
     console.log("It failed with " + error);
@@ -117,34 +119,31 @@ const EditArticleView = () => {
 
   // const articleData2 = filterArticleById();
   // articleData2.then(successCallback, failureCallback);
-  const StoreOnClick = () => {
-    let taglist = [];
-    articleData.all_tags.forEach((tag) => {
+const StoreOnClick = ()=>{
+  let taglist = [];
+  articleData.all_tags.forEach((tag) => {
       taglist.push(tag.id);
       // console.log(taglist)
     });
-    console.log(selectedTagList);
-    const postArticle = updateArticle(
-      {
-        article_id: Number(articleData.id),
-        publish: Boolean(!articleData.publish),
-        articleTitle: articleData.articleTitle,
-        articleDescription: articleData.articleDescription,
-        author_1: articleData.author_1,
-        author_2: articleData.author_2,
-        image: articleData.image,
-        articleContent: articleData.articleContent,
-        tags: selectedTagList,
-      },
-      token
-    );
+    console.log(selectedTagList)
+    const postArticle = updateArticle({
+      article_id: Number(articleData.id),
+      publish: Boolean(!articleData.publish),
+      articleTitle: articleData.articleTitle,
+      articleDescription: articleData.articleDescription,
+      author_1: articleData.author_1,
+      author_2: articleData.author_2,
+      image: articleData.image,
+      articleContent: articleData.articleContent,
+      tags: selectedTagList,
+    },token);
     postArticle.then(
       function () {
         refetch();
       },
       function () {}
     );
-  };
+}
   if (isLoading) return <>Loading</>;
   return (
     <>
@@ -157,58 +156,52 @@ const EditArticleView = () => {
             placeholder="請輸入標題"
             value={articleData?.articleTitle}
             // onChange={(e)=>{setTitleValue(e.target.value)}}
-            onChange={(e) => {
-              setArticleData({
-                publish: articleData.publish,
-                all_tags: articleData.all_tags,
-                articleTitle: e.target.value,
-                image: articleData.image,
-                id: articleData.id,
-                date: articleData.date,
-                date2: articleData.date2,
-                author_1: articleData.author_1,
-                author_2: articleData.author_2,
-                articleContent: articleData.articleContent,
-              });
-            }}
+            onChange={(e)=>{setArticleData( {
+              publish: articleData.publish,
+              all_tags: articleData.all_tags,
+              articleTitle: e.target.value,
+              image: articleData.image,
+              id: articleData.id,
+              date: articleData.date,
+              date2: articleData.date2,
+              author_1:articleData.author_1,
+              author_2: articleData.author_2,
+              articleContent: articleData.articleContent,
+            })}}
           />
           <Input
             className="edit-article-input"
             placeholder="作者名稱（可省略）"
             value={articleData?.author_1}
-            onChange={(e) => {
-              setArticleData({
-                publish: articleData.publish,
-                all_tags: articleData.all_tags,
-                articleTitle: articleData.articleTitle,
-                image: articleData.image,
-                id: articleData.id,
-                date: articleData.date,
-                date2: articleData.date2,
-                author_1: e.target.value,
-                author_2: articleData.author_2,
-                articleContent: articleData.articleContent,
-              });
-            }}
+            onChange={(e)=>{setArticleData( {
+              publish: articleData.publish,
+              all_tags: articleData.all_tags,
+              articleTitle: articleData.articleTitle,
+              image: articleData.image,
+              id: articleData.id,
+              date: articleData.date,
+              date2: articleData.date2,
+              author_1:e.target.value,
+              author_2: articleData.author_2,
+              articleContent: articleData.articleContent,
+            })}}
           />
           <Input
             className="edit-article-input mb50"
             placeholder="譯者名稱（可省略）"
             value={articleData?.author_2}
-            onChange={(e) => {
-              setArticleData({
-                publish: articleData.publish,
-                all_tags: articleData.all_tags,
-                articleTitle: articleData.articleTitle,
-                image: articleData.image,
-                id: articleData.id,
-                date: articleData.date,
-                date2: articleData.date2,
-                author_1: articleData.author_1,
-                author_2: e.target.value,
-                articleContent: articleData.articleContent,
-              });
-            }}
+            onChange={(e)=>{setArticleData( {
+              publish: articleData.publish,
+              all_tags: articleData.all_tags,
+              articleTitle: articleData.articleTitle,
+              image: articleData.image,
+              id: articleData.id,
+              date: articleData.date,
+              date2: articleData.date2,
+              author_1:articleData.author_1,
+              author_2: e.target.value,
+              articleContent: articleData.articleContent,
+            })}}
           />
           <div className="edit-article-add-img ">
             <img src="/images/add_article.png"></img>
@@ -228,20 +221,18 @@ const EditArticleView = () => {
             rows={10}
             placeholder="開始填寫內容"
             value={articleData?.articleContent}
-            onChange={(e) => {
-              setArticleData({
-                publish: articleData.publish,
-                all_tags: articleData.all_tags,
-                articleTitle: articleData.articleTitle,
-                image: articleData.image,
-                id: articleData.id,
-                date: articleData.date,
-                date2: articleData.date2,
-                author_1: articleData.author_1,
-                author_2: articleData.author_2,
-                articleContent: e.target.value,
-              });
-            }}
+            onChange={(e)=>{setArticleData( {
+              publish: articleData.publish,
+              all_tags: articleData.all_tags,
+              articleTitle: articleData.articleTitle,
+              image: articleData.image,
+              id: articleData.id,
+              date: articleData.date,
+              date2: articleData.date2,
+              author_1:articleData.author_1,
+              author_2: articleData.author_2,
+              articleContent: e.target.value,
+            })}}
           ></TextArea>
 
           <div className="">
@@ -253,20 +244,18 @@ const EditArticleView = () => {
                   selectedTags={selectedTagList}
                   setTagList={setTagList}
                   tag={tag}
-                  num={index + 1}
+                  num={index+1}
                 ></ArticleEachTag>
               ))}
             </div>
           </div>
-          <div className="edit-article-save" onClick={StoreOnClick}>
-            儲存
-          </div>
+          <div className="edit-article-save" onClick={StoreOnClick}>儲存</div>
         </div>
       </div>
     </>
   );
 };
-const ArticleEachTag = ({ selectedTags, setTagList, tagOnClick, tag, num }) => {
+const ArticleEachTag = ({ selectedTags,setTagList, tagOnClick, tag,num}) => {
   const [active, setActive] = useState(false);
   useEffect(() => {
     const toggle = selectedTags.find((item) => item === num);

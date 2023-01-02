@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { Selectadmin, articleEditing } from "../redux/adminSlice";
+import { selectadmin, articleEditing } from "../redux/adminSlice";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import homeData from "../json/home.json";
@@ -13,7 +13,7 @@ const HomeView = () => {
   useEffect(() => {
     EditArticle();
   }, []);
-  const admin = useSelector(Selectadmin);
+  const admin = useSelector(selectadmin);
   const dispatch = useDispatch();
   console.log(admin);
   const EditArticle = () => {
