@@ -10,9 +10,9 @@ const Navbar = ({posr,admin}) => {
     <img src="/images/nav_logo.png" className="navbar-logo"/>
     </Link>
     {
-      admin?( <div className="nav-management">
+      admin?( <Link to={"/admin"}><div className="nav-management">
       管理模式
-    </div>):("")
+    </div></Link>):("")
     }
     
 <div className="navLinks">

@@ -47,6 +47,7 @@
     width: 13vw;
     outline: 6px solid;
     font-size: 2.3vw;
+    color: #000;
 }
 .b_text:hover{
     outline: 6px solid #000;
@@ -54,3 +55,17 @@
     color: #FFF;
     transition: 0.3s;
 }
+/* @media (max-width: 700px) {
+    .Banner{
+       
+        justify-content: center;
+    }
+    .intro{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+       
+        justify-content:center;
+    }
+} */

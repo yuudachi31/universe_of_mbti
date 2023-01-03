@@ -40,27 +40,27 @@ a{
   font-family: 'ヒラギノ角ゴ ProN W5';
   src: url(./fonts/ヒラギノ角ゴシック\ W5.ttc) format('');
 }
-@font-face {
-  font-family: 'ヒラギノ角ゴ ProN W6';
-  src: url(./fonts/ヒラギノ角ゴシック\ W6.ttc) format('');
-}
 /* @font-face {
   font-family: 'ヒラギノ角ゴ ProN W6';
-  src: url(./fonts/HiraKakuProN-W6.otf) format('opentype');
+  src: url(./fonts/ヒラギノ角ゴシック\ W6.ttc) format('');
 } */
+@font-face {
+  font-family: 'ヒラギノ角ゴ ProN W6';
+  src: url(./fonts/HiraKakuProN-W6.otf) format('opentype');
+}
 
 @font-face {
   font-family: 'ヒラギノ角ゴ ProN W7';
   src: url(./fonts/ヒラギノ角ゴシック\ W7.ttc) format('');
 }
-@font-face {
-  font-family: 'ヒラギノ角ゴ ProN W8';
-  src: url(./fonts/ヒラギノ角ゴシック\ W8.ttc) format('');
-}
 /* @font-face {
   font-family: 'ヒラギノ角ゴ ProN W8';
-  src: url(./fonts/HiraKakuStdN-W8.otf) format('opentype');
+  src: url(./fonts/ヒラギノ角ゴシック\ W8.ttc) format('');
 } */
+@font-face {
+  font-family: 'ヒラギノ角ゴ ProN W8';
+  src: url(./fonts/HiraKakuStdN-W8.otf) format('opentype');
+}
 
 /* CSS3不支援ttc轉換 所以將常用的W6和W8 轉為otf再format */
 
@@ -104,7 +104,7 @@ font-size: 26px;
 line-height: 39px;
 }
 .posr{
-  position: absolute;
+  position: relative;
 }
 .link{
   text-decoration: none;
@@ -234,6 +234,7 @@ font-style: normal;
 font-weight: 800;
 font-size: 2vw;
 line-height: 54px;
+color: #2A2A2A;
 /* identical to box height */
 
 letter-spacing: 0.05em;
@@ -292,11 +293,66 @@ color: #2A2A2A;
   height: 3px;
   margin: 5vw 0px ;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1024px){
+  .home-content{
+    /* width: 100%; */
+    margin: 0px 70px  0 70px;
+  
+  }
   .section-feature-list{
     display: grid;
     margin-top: 50px;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 0 10%
+    /* flex:1 1 1 1; */
+    /* background-color: #2B2B2B; */
+    /* justify-content: space-between; */
+  }
+  .section-maintype{
+  line-height: 1.2;
+    font-size: 45px;
+    letter-spacing: 0.05em;
+    }
+    .section-english{
+      font-size: 22.5px;
+    }
+    .section-feature{
+      font-size: 28px;
+    }
+  .section-each-type{
+    /* width: 16vw; */
+    display: flex;
+    flex-direction: column;
+    /* width: 40%; */
+    margin-bottom: 100px;
+    
+}
+.section-line{
+  height: 3px;
+  margin: 0 0 5vw 0px ;
+  background: #000;
+}
+}
+@media screen and (max-width: 680px){
+  .home-content{
+    /* width: 100%; */
+    margin: 0px 50px  0 50px;
+  }
+  .section-maintype{
+    line-height: 1.2;
+      font-size: 35px;
+      letter-spacing: 0.05em;
+      }
+      .section-english{
+        font-size: 18px;
+      }
+      .section-feature{
+        font-size: 24px;
+      }
+  .section-feature-list{
+    display: grid;
+    margin-top: 50px;
+    grid-template-columns:  1fr;
     grid-gap: 0 10%
     /* flex:1 1 1 1; */
     /* background-color: #2B2B2B; */
@@ -604,7 +660,9 @@ color: #666666;
   margin-left: auto;
   width: 200px;
   height: 200px;
-  background-color: #2A2A2A;
+  /* background-color: #aeaeae; */
+  background: url(../public/images/bbb.png);
+  background-repeat: no-repeat;
 }
 .articleCard-date-tags{
   display: flex;
@@ -1003,11 +1061,12 @@ line-height: 175%;
 
 letter-spacing: 0.02em;
 border: none;
-color: #9E9E9E;
+color: #3e3e3e;
 padding-left: 30px;
 display: block;
 margin-top: 40px;
 }
+
 .edit-article-add-img{
   display: flex;
   align-items: center;
@@ -1041,7 +1100,7 @@ margin-left: 16px;
   
   letter-spacing: 0.02em;
   border: none;
-  color: #9E9E9E;
+  color: #3c3c3c;
   padding-left: 30px;
   padding-top: 22px;
   display: block;
@@ -1261,7 +1320,17 @@ margin-right: 20px;
 
 }
 
-
+.adminLogin{
+  margin: 0 auto;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-button{
+  margin-top: 40px;
+  width: fit-content;
+}
 
 
 

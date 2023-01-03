@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import articleListJson from "../json/articleList.json"
+// import articleListJson from "../json/articleList.json"
 const initialState = {
-  articleList: [...articleListJson]
+  // articleList: [...articleListJson]
+  articleList: []
   ,
 };
 
@@ -10,6 +11,7 @@ const articleSlice = createSlice({
   initialState,
   reducers: {
     setArticleList: (state, action) => {
+      // console.log("hello")
       let newstate = action.payload
       state.articleList = [...newstate];
 

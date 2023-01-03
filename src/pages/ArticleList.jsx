@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { selectSelectTag, setSelectedTags } from "../redux/selectTagSlice";
 import articleListJson from "../json/articleList.json";
-import { selectArticle } from "../redux/articleSlice";
+import { selectArticle, setArticleList } from "../redux/articleSlice";
 import MediaQuery from "react-responsive";
 import { useAllArticle } from "../react-query/index";
 
@@ -24,51 +24,86 @@ const ArticleList = () => {
   // const [selectedTags, setSelectedTags] = useState([]);
   const selectedTags = useSelector(selectSelectTag);
   const articleList = useSelector(selectArticle);
-  
-  const { data, isLoading } = useAllArticle("none");
+  const dispatch = useDispatch();
+  const { isLoading, data, refetch, isSuccess } = useAllArticle(selectedTags);
 
-if(selectedTags.length!==0){
-  selectedTags.forEach((item)=>{
-
-  })
-}
-
-
-  console.log(data);
-  const articleData = data?.data || [];
-  const [okArticleArray,setArray]=useState([...articleData])
-  let filtedData = articleData
+  // if (selectedTags.length !== 0) {
+  //   selectedTags.forEach((item) => {});
+  // }
+  // useEffect(() => {}, [selectedTags]);
   useEffect(() => {
-    filtedData = []
-    if(selectedTags.length!==0){
-      articleData.forEach((article)=>{
-        let labelArray=[]
-        article.all_labels.forEach((label)=>{
-          labelArray.push(label.label)
-        })
-        let fit = true
-        selectedTags.forEach((tag)=>{
-          if(!labelArray.includes(tag)){
-            fit = false
+    dispatch(setSelectedTags([]));
+    //  setArray(articleList) ;
+    // setArray(data?.data) ;
+  }, []);
+  useEffect(() => {
+    // setArticleList(data)
+    if (data) {
+      dispatch(setArticleList(data.data));
+      console.log(data);
+    }
+  }, [isSuccess]);
+
+  // useEffect(()=>{
+  //   // setArray(data?.data)
+  // },[data])
+  setArticleList(data?.data);
+  console.log(articleList);
+  // const articleData = data?.data ||["aa","aa"];
+  const [okArticleArray, setArray] = useState(data?.data);
+  let filtedData = articleList;
+
+  useEffect(() => {
+    filtedData = [];
+    if (selectedTags.length !== 0) {
+      articleList.forEach((article) => {
+        let labelArray = [];
+        article.all_tags.forEach((label) => {
+          labelArray.push(label.tag);
+        });
+        let fit = true;
+        selectedTags.forEach((tag) => {
+          if (!labelArray.includes(tag)) {
+            fit = false;
           }
-        })
-        if(fit){
-          filtedData.push(article)
+        });
+        if (fit) {
+          filtedData.push(article);
         }
-        setArray(filtedData)
-      }
-      
-      )
-  
-    }else{
-      setArray(articleData)
+        setArray(filtedData);
+      });
     }
   }, [selectedTags]);
-  
-  const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   filtedData = [];
+  //   if (selectedTags.length !== 0) {
+  //     articleList.forEach((article) => {
+  //       let labelArray = [];
+  //       article.tags.forEach((label) => {
+  //         labelArray.push(label);
+  //       });
+  //       let fit = true;
+  //       selectedTags.forEach((tag) => {
+  //         if (!labelArray.includes(tag)) {
+  //           fit = false;
+  //         }
+  //       });
+  //       if (fit) {
+  //         filtedData.push(article);
+  //       }
+  //       setArray(filtedData);
+  //     });
+  //   } else {
+  //     setArray(articleListJson);
+  //   }
+  // }, [selectedTags]);
+
+  // const dispatch = useDispatch();
   const tagOnClick = (e) => {
     // console.log("s");
     let type = e.target.innerHTML;
+    console.log(type);
     if (selectedTags.find((item) => item === type)) {
       selectedTags.forEach((item, index) => {
         let arr = [...selectedTags];
@@ -79,9 +114,12 @@ if(selectedTags.length!==0){
         }
       });
     } else {
+      let arr = [...selectedTags];
       dispatch(setSelectedTags([...selectedTags, type]));
     }
     console.log(selectedTags);
+    // refetch();
+    // setArticleList(data.data)
   };
 
   // const tagOnClick = (e) => {
@@ -127,14 +165,39 @@ if(selectedTags.length!==0){
           </div>
           <MediaQuery minWidth={769}></MediaQuery>
           <div className="article-content-container">
-            <div className="articleList">
-              {articleList.map((item) => (
-                <ArticleCard item={item} />
-              ))}
-              {/* {okArticleArray.map((item) => (
+            {!isLoading ? (
+              selectedTags.length === 0 ? (
+                <div className="articleList">
+                  {articleList.map((item) => (
+                    <>
+                    {
+                      item.publish?( <ArticleCard item={item} />):(null)
+                   
+                    }
+                    </>
+                    
+                  ))}
+                  {/* {okArticleArray.map((item) => (
                 <ArticleCard item={item} />
               ))} */}
-            </div>
+                </div>
+              ) : (
+                <div className="articleList">
+                  {okArticleArray.map((item) => (
+                    <>
+                    {
+                      item.publish?( <ArticleCard item={item} />):(null)
+                   
+                    }
+                    </>
+                    
+                  ))}
+                </div>
+              )
+            ) : (
+              <></>
+            )}
+
             <div className="article-tags-cont">
               <div className="article-tags-title">標籤選擇</div>
               <div className="article-tags">
@@ -187,22 +250,27 @@ const ArticleEachTag = ({ selectedTags, tagOnClick, tag }) => {
 
 const ArticleCard = ({ item }) => {
   return (
-    <Link className="link" to="/article/id">
+    <Link className="link" to={"/article/" + item.id}>
       <div className="articleCard-cont">
         <div className="articleCard-textblock">
           <div className="articleCard-title">{item.articleTitle}</div>
-          <div className="articleCard-description">
-            {item.articleContent}
-          </div>
+          <div className="articleCard-description">{item.articleContent}</div>
           <div className="articleCard-date-tags">
-            <div className="articleCard-date">{item.date}</div>
-            <div className="articleCard-tags">{item.tags}</div>
+            <div className="articleCard-tags-posa">
+              <div className="articleCard-date">{item.date}</div>
+              {item.all_tags ? (
+                <>
+                  {item.all_tags.map((item) => (
+                    <div className="articleCard-tags">{item.tag}</div>
+                  ))}
+                </>
+              ) : null}
+            </div>
           </div>
         </div>
         <div className="articleCard-img"></div>
       </div>
     </Link>
-
 
     // <Link className="link" to={"/article/"+3}>
     //   <div className="articleCard-cont">

@@ -19,7 +19,7 @@ const elevatorArray = [
   { text: "MBTI是什麼?", link: "#2" },
   { text: "四大維度介紹", link: "#3" },
   { text: "認知功能介紹", link: "#4" },
-  { text: "爭議", link: "#5" },
+  // { text: "爭議", link: "#5" },
 ];
 
 const fourDimensionData = [

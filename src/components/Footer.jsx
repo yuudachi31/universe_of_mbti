@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Footer = ({ item }) => {
-  console.log(item);
+  // console.log(item);
 
   return (
     <div className="footer-cont">
