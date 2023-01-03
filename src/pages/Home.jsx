@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import homeData from "../json/home.json";
 import Banner from "../components/Banner";
-import MobileBanner from "../components/MobileBanner"
+// import MobileBanner from "../components/MobileBanner"
 import HomeSection from "../components/HomeSection";
 import MediaQuery from "react-responsive";
 // import {} from "../redux/adminSlice"
